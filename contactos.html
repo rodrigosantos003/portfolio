@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="icon" href="img/favicon.ico" sizes="256x256">
+    <title>Rodrigo Santos - Contactos</title>
+</head>
+
+<body>
+    <!--NAV BAR-->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="quem_sou.html">Biografia</a>
+        <a href="formacao.html">Formação</a>
+        <a href="portfolio.html">Portfólio</a>
+        <a href="hobbies.html">Hobbies</a>
+        <a href="contactos.html">Contactos</a>
+    </nav>
+
+    <header>
+        <h1>Contactos</h1>
+    </header>
+
+    <!--MAIN CONTENT-->
+    <main>
+        <!--CONTACT INFO-->
+        <address>
+            <p>Email: rodrigo.s.santos003@gmail.com</p>
+            <p>Telefone: (+351) 914 347 964</p>
+            <p>
+                Redes Sociais:
+                <a href="https://instagram.com/r.santos_03">Instagram</a> |
+                <a href="https://facebook.com/r.santos03">Facebook</a> |
+                <a href="https://linkedin.com/in/rodrigo-santos-2003">LinkedIn</a>
+            </p>
+        </address>
+
+        <!--MESSAGE FORM-->
+        <form name="send_message" method="post" action="contact.php">
+            <fieldset>
+                <legend>Envia uma mensagem</legend>
+                <label for="name">Nome:</label> <br />
+                <input type="text" id="name" name="name" placeholder="O teu nome" size="30"> <br />
+
+                <label for="email">Email:</label> <br />
+                <input type="email" id="email" name="email" placeholder="O teu email" size="30"> <br />
+
+                <label for="message">Mensagem:</label> <br />
+                <textarea id="message" name="message" placeholder="A tua mensagem" rows="10" cols="50"></textarea>
+                <br />
+
+                <input type="submit" value="Enviar">
+            </fieldset>
+        </form>
+    </main>
+
+    <!--FOOTER-->
+    <footer>
+        <p>Copyright &copy; 2021 - Rodrigo Santos</p>
+    </footer>
+</body>
+
+</html>
