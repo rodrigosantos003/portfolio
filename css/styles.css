@@ -1,11 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
 body {
-  font-family: "Century Gothic";
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
   line-height: 1.5;
-  background-color: #f1f1f1;
+  background-color: #2b354b;
+  color: #fff;
 }
 
 nav {
-  text-align: right;
+  margin: 50px;
+  text-align: center;
+  font-weight: bold;
 }
 
 nav a {
@@ -13,12 +19,13 @@ nav a {
 }
 
 a {
-  color: #f37e47;
+  color: #fff;
+  text-decoration: none;
 }
 
 a:hover {
   transition: 0.3s;
-  color: #2b354b;
+  color: #f37e47;
 }
 
 h1 {
@@ -34,18 +41,24 @@ h1 {
   height: 50%;
 }
 
+.biography {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
 button {
-  width: 200px;
+  width: 100%;
   height: 50px;
-  background-color: #2b354b;
+  background-color: #f37e47;
   color: white;
   border: none;
+  border-radius: 10px;
 }
 
 button:hover {
   transition: 0.3s;
   background-color: white;
-  color: #2b354b;
+  color: #f37e47;
   cursor: pointer;
 }
 
