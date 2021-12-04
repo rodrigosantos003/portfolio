@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 
 /*---------------------------------------
-      GERAL              
+      GENERAL              
   -----------------------------------------*/
 body {
   font-family: "Roboto", sans-serif;
@@ -64,9 +64,9 @@ td {
 }
 
 /*---------------------------------------
-      QUEM SOU              
+      BIOGRAPHY              
   -----------------------------------------*/
-#prophilephoto {
+#profilephoto {
   text-align: center;
 }
 
@@ -85,7 +85,7 @@ td {
 }
 
 /*---------------------------------------
-      FORMAÇÃO              
+      EDUCATION              
   -----------------------------------------*/
 .education {
   margin-left: 20%;
@@ -111,6 +111,35 @@ td {
 
 .card-content {
   padding: 2px 16px;
+}
+
+/*---------------------------------------
+      PORTFOLIO              
+  -----------------------------------------*/
+
+.portfolio {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.portfolio-list {
+  list-style-type: none;
+}
+
+.portfolio-item {
+  padding: 10px;
+  overflow: auto;
+}
+
+.portfolio-item:hover {
+  background: #f37e47;
+  cursor: pointer;
+}
+
+.portfolio-item img {
+  width: 50%;
+  float: left;
+  margin: 0 15px 0 0;
 }
 
 /*---------------------------------------
