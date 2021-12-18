@@ -1,0 +1,19 @@
+.portfolio-list {
+  list-style-type: none;
+}
+
+.portfolio-item {
+  padding: 10px;
+  overflow: auto;
+}
+
+.portfolio-item:hover {
+  background: #f37e47;
+  cursor: pointer;
+}
+
+.portfolio-item img {
+  width: 50%;
+  float: left;
+  margin: 0 15px 0 0;
+}
