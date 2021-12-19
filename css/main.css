@@ -2,20 +2,9 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  font-size: 1.2em;
   line-height: 1.5;
   background-color: #2b354b;
   color: #fff;
-}
-
-nav {
-  margin: 50px;
-  text-align: center;
-  font-weight: bold;
-}
-
-nav a {
-  margin-right: 10px;
 }
 
 a {

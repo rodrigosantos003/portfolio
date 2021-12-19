@@ -1,0 +1,39 @@
+/*---------------------------------------
+      MOBILE DEVICES              
+  -----------------------------------------*/
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 0.5em;
+  }
+
+  .menu a {
+    float: none;
+  }
+}
+
+/*---------------------------------------
+      TABLETS & iPADES              
+  -----------------------------------------*/
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 0.7em;
+  }
+}
+
+/*---------------------------------------
+      DESKTOPS & LARGE SCREENS              
+  -----------------------------------------*/
+@media screen and (max-width: 1200px) {
+  body {
+    font-size: 1em;
+  }
+}
+
+/*---------------------------------------
+      TV'S & EXTRA-LARGE SCREENS             
+  -----------------------------------------*/
+@media screen and (min-width: 1201px) {
+  body {
+    font-size: 1.2em;
+  }
+}
