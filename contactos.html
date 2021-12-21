@@ -32,31 +32,29 @@
     <!--MAIN CONTENT-->
     <main>
         <section>
+            <h3>Entra em contacto comigo</h3>
             <!--CONTACT INFO-->
             <address>
                 <p>Email: <a href="mailto:rodrigo.s.santos003@gmail.com">rodrigo.s.santos003@gmail.com</a></p>
-                <p>Telefone: <a href="tel:(+351) 914 347 964">(+351) 914 347 964</a></p>
+                <p>Telefone: <a href="tel:(+351)914347964">(+351) 914 347 964</a></p>
 
                 <a href="https://instagram.com/r.santos_03"><img src="img/instagram.png" alt="Instagram"
                         class="social-media"></a>
                 <a href="https://linkedin.com/in/rodrigo-santos-2003"><img src="img/linkedin.png" alt="LinkedIn"
                         class="social-media"></a>
-                </p>
             </address>
 
             <!--MESSAGE FORM-->
-            <form name="send_message" method="post" action="contact.php">
+            <form name="send_message" method="post" action="contact.php" class="form">
                 <fieldset>
                     <legend>Envia uma mensagem</legend>
-                    <label for="name">Nome:</label> <br />
-                    <input type="text" id="name" name="name" placeholder="O teu nome" size="30"> <br />
+                    <p><input type="text" id="name" name="name" placeholder="Nome" size="30" class="form-field"></p>
 
-                    <label for="email">Email:</label> <br />
-                    <input type="email" id="email" name="email" placeholder="O teu email" size="30"> <br />
+                    <p><input type="email" id="email" name="email" placeholder="Email" size="30" class="form-field"></p>
 
-                    <label for="message">Mensagem:</label> <br />
-                    <textarea id="message" name="message" placeholder="A tua mensagem" rows="10" cols="50"></textarea>
-                    <br />
+                    <p>
+                        <textarea id="message" name="message" placeholder="Mensagem" rows="10" cols="50"></textarea>
+                    </p>
 
                     <input type="submit" value="Enviar" class="button">
                 </fieldset>
