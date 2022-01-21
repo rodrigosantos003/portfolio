@@ -9,10 +9,14 @@
   .menu a {
     float: none;
   }
+
+  .social-media {
+    width: 10%;
+  }
 }
 
 /*---------------------------------------
-      TABLETS & iPADES              
+      TABLETS & iPADS              
   -----------------------------------------*/
 @media screen and (max-width: 768px) {
   body {
