@@ -8,7 +8,9 @@
 }
 
 .portfolio-item:hover {
-  background: #f37e47;
+  transition: 0.3s;
+  background: #000101;
+  color: #fff;
   cursor: pointer;
 }
 
