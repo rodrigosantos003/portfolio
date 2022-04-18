@@ -12,12 +12,27 @@ body {
 
 a {
   color: #414140;
+  display: inline-block;
+  position: relative;
   text-decoration: none;
 }
 
-a:hover {
-  transition: 0.3s;
-  text-decoration: underline;
+a:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #414140;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+a:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 h1 {
