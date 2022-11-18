@@ -6,34 +6,35 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
+
 <url>
   <loc>https://rodrigosantos.vercel.app/</loc>
-  <lastmod>2022-11-18T12:05:18+00:00</lastmod>
+  <lastmod>2022-11-18T12:30:27+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://rodrigosantos.vercel.app/contactos.html</loc>
-  <lastmod>2022-11-18T12:05:18+00:00</lastmod>
+  <lastmod>2022-11-18T12:30:27+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://rodrigosantos.vercel.app/hobbies.html</loc>
-  <lastmod>2022-11-18T12:05:18+00:00</lastmod>
+  <lastmod>2022-11-18T12:30:27+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://rodrigosantos.vercel.app/portfolio.html</loc>
-  <lastmod>2022-11-18T12:05:18+00:00</lastmod>
+  <lastmod>2022-11-18T12:30:27+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://rodrigosantos.vercel.app/formacao.html</loc>
-  <lastmod>2022-11-18T12:05:18+00:00</lastmod>
+  <lastmod>2022-11-18T12:30:27+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://rodrigosantos.vercel.app/index.html</loc>
-  <lastmod>2022-11-18T12:05:18+00:00</lastmod>
+  <lastmod>2022-11-18T12:30:27+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
