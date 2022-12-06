@@ -35,7 +35,7 @@ async function getProjects() {
       li.appendChild(img);
 
       var h3 = document.createElement("h3");
-      h3.innerHTML = project.name;
+      h3.innerHTML = transformText(project.name);
       li.appendChild(h3);
 
       var p = document.createElement("p");
@@ -45,4 +45,18 @@ async function getProjects() {
       portfolioList.appendChild(li);
     }
   });
+}
+
+function transformText(text) {
+  var words = text.split("-");
+  var result = "";
+  var vowelList = "aeiouAEIUO";
+
+  words.forEach((word) => {
+    if (word.length == 2 || word.length == 3)
+      result += word.toUpperCase() + " ";
+    else result += word.charAt(0).toUpperCase() + word.slice(1) + " ";
+  });
+
+  return result;
 }
