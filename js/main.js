@@ -2,18 +2,18 @@ window.onload = function () {
   getProjects();
 };
 
-function openProject(project) {
-  if (arguments.length === 1) {
-    let link = "https://github.com/rodrigosantos003/" + project;
-    window.open(link, "_blank");
-  } else throw new Error("Projet unspecified");
-}
-
 async function getProjects() {
   const url = "https://api.github.com/users/rodrigosantos003/repos";
 
   const response = await fetch(url);
   const projects = await response.json();
+
+  projects.sort((a, b) => {
+    if (a.created_at < b.created_at) return 1;
+    else if (a.created_at > b.created_at) return -1;
+
+    return 0;
+  });
 
   var portfolioList = document.getElementsByClassName("portfolio-list")[0];
 
@@ -26,7 +26,10 @@ async function getProjects() {
 
       var img = document.createElement("img");
       var imageSource = "img/portfolio/" + project.name + ".png";
-      img.setAttribute("src", imageSource);
+      var personalPageImage = "img/rodrigo_santos.jpg";
+      if (project.name == "personal-page")
+        img.setAttribute("src", personalPageImage);
+      else img.setAttribute("src", imageSource);
 
       img.onerror = function () {
         this.src = "img/portfolio/default.png";
@@ -45,6 +48,13 @@ async function getProjects() {
       portfolioList.appendChild(li);
     }
   });
+}
+
+function openProject(project) {
+  if (arguments.length === 1) {
+    let link = "https://github.com/rodrigosantos003/" + project;
+    window.open(link, "_blank");
+  } else throw new Error("Projet unspecified");
 }
 
 function transformText(text) {
