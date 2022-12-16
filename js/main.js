@@ -18,7 +18,7 @@ async function getProjects() {
   var portfolioList = document.getElementsByClassName("portfolio-list")[0];
 
   projects.forEach((project) => {
-    if (project.name != "rodrigosantos003") {
+    if (project.name != "rodrigosantos003" && project.name != "personal-page") {
       var li = document.createElement("li");
       li.classList = "portfolio-item";
       var onclickEvent = "openProject('" + project.name + "')";
@@ -60,7 +60,6 @@ function openProject(project) {
 function transformText(text) {
   var words = text.split("-");
   var result = "";
-  var vowelList = "aeiouAEIUO";
 
   words.forEach((word) => {
     if (word.length == 2 || word.length == 3)
