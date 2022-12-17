@@ -1,8 +1,10 @@
 window.onload = function () {
-  getProjects();
+  if (document.title == "Rodrigo Santos - Portfolio") {
+    getProjects(showProjects);
+  }
 };
 
-async function getProjects() {
+async function getProjects(callback) {
   const url = "https://api.github.com/users/rodrigosantos003/repos";
 
   const response = await fetch(url);
@@ -15,7 +17,7 @@ async function getProjects() {
     return 0;
   });
 
-  var portfolioList = document.getElementsByClassName("portfolio-list")[0];
+  var portfolioList = document.getElementById("portfolio-list");
 
   projects.forEach((project) => {
     if (project.name != "rodrigosantos003" && project.name != "personal-page") {
@@ -48,6 +50,13 @@ async function getProjects() {
       portfolioList.appendChild(li);
     }
   });
+
+  callback();
+}
+
+function showProjects() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("portfolio-list").style.display = "block";
 }
 
 function openProject(project) {
