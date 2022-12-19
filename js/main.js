@@ -1,7 +1,5 @@
 window.onload = function () {
-  if (document.title == "Rodrigo Santos - Portfolio") {
-    getProjects(showProjects);
-  }
+  if (document.title == "Rodrigo Santos - Portfolio") getProjects(showProjects);
 };
 
 async function getProjects(callback) {
@@ -17,41 +15,44 @@ async function getProjects(callback) {
     return 0;
   });
 
-  var portfolioList = document.getElementById("portfolio-list");
-
   projects.forEach((project) => {
-    if (project.name != "rodrigosantos003" && project.name != "personal-page") {
-      var li = document.createElement("li");
-      li.classList = "portfolio-item";
-      var onclickEvent = "openProject('" + project.name + "')";
-      li.setAttribute("onclick", onclickEvent);
-
-      var img = document.createElement("img");
-      var imageSource = "img/portfolio/" + project.name + ".png";
-      var personalPageImage = "img/rodrigo_santos.jpg";
-      if (project.name == "personal-page")
-        img.setAttribute("src", personalPageImage);
-      else img.setAttribute("src", imageSource);
-
-      img.onerror = function () {
-        this.src = "img/portfolio/default.png";
-      };
-
-      li.appendChild(img);
-
-      var h3 = document.createElement("h3");
-      h3.innerHTML = transformText(project.name);
-      li.appendChild(h3);
-
-      var p = document.createElement("p");
-      p.innerHTML = project.description;
-      li.appendChild(p);
-
-      portfolioList.appendChild(li);
-    }
+    if (project.name != "rodrigosantos003" && project.name != "personal-page")
+      buildProject(project);
   });
 
   callback();
+}
+
+function buildProject(project) {
+  var portfolioList = document.getElementById("portfolio-list");
+
+  var li = document.createElement("li");
+  li.classList = "portfolio-item";
+  var onclickEvent = "openProject('" + project.name + "')";
+  li.setAttribute("onclick", onclickEvent);
+
+  var img = document.createElement("img");
+  var imageSource = "img/portfolio/" + project.name + ".png";
+  var personalPageImage = "img/rodrigo_santos.jpg";
+  if (project.name == "personal-page")
+    img.setAttribute("src", personalPageImage);
+  else img.setAttribute("src", imageSource);
+
+  img.onerror = function () {
+    this.src = "img/portfolio/default.png";
+  };
+
+  li.appendChild(img);
+
+  var h3 = document.createElement("h3");
+  h3.innerHTML = transformText(project.name);
+  li.appendChild(h3);
+
+  var p = document.createElement("p");
+  p.innerHTML = project.description;
+  li.appendChild(p);
+
+  portfolioList.appendChild(li);
 }
 
 function showProjects() {
