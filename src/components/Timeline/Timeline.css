@@ -82,3 +82,7 @@ ul:nth-child(1) {
     text-align: justify;
     line-height: 1.5;
 }
+
+.job-separator {
+    margin: 15px 0px;
+}
