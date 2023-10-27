@@ -1,0 +1,50 @@
+@import "../../app/global.css";
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--background);
+    font-size: var(--textSize);
+}
+
+.navbar img {
+    padding-top: 15px;
+    width: 20%;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-item a {
+    padding: 0px 15px 10px 15px;
+    text-decoration: none;
+    color: var(--primary);
+    position: relative;
+}
+
+.nav-item a:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.nav-item a:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.logo {
+    text-decoration: none;
+    color: var(--primary);
+    padding-left: 15px;
+}
