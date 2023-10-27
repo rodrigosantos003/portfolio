@@ -5,6 +5,7 @@
   --primary: #f4f4f4;
   --textSize: 1.1rem;
   --headingSize: 1.5rem;
+  --subheadingSize: 1.3rem;
 }
 
 * {
@@ -22,6 +23,10 @@ h1 {
   text-align: center;
   font-size: var(--headingSize);
   margin-bottom: 30px;
+}
+
+h2 {
+  font-size: var(--subheadingSize);
 }
 
 section {

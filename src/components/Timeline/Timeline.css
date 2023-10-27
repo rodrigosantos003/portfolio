@@ -3,6 +3,7 @@
 .container {
     width: 1200px;
     margin: auto;
+    padding-bottom: 7%;
 }
 
 .timeline {
@@ -65,4 +66,19 @@ ul:nth-child(1) {
 
 .timeline li.active-tl+li:after {
     background: var(--primary);
+}
+
+.job-description {
+    clear: both;
+    text-align: center;
+    border: 1px solid var(--primary);
+    border-radius: 10px;
+    width: 40%;
+    padding: 15px 30px;
+    margin: auto;
+}
+
+.job-description ul {
+    text-align: justify;
+    line-height: 1.5;
 }
