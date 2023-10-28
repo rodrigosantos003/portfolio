@@ -71,7 +71,7 @@ export default function Projects() {
 
         <div className="card-grid">
             {currentData.map((repo, index) => {
-                const imagePath = `../../../projects/${repo.name}.png`;
+                const imagePath = `../../../projects/${repo.name}.webp`;
 
                 return (
                     repo.name != "rodrigosantos003" &&

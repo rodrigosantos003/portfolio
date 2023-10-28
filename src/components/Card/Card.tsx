@@ -8,7 +8,7 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({ imageUrl, title, content }) => {
-    const defaultPath = '../../../projects/default.png';
+    const defaultPath = '../../../projects/default.webp';
 
     const handleImageError = (event: React.SyntheticEvent<HTMLImageElement>) => {
         // Display the default image if the image fails to load

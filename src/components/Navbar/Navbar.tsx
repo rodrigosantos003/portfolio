@@ -7,7 +7,7 @@ export default function NavBar() {
 
     return (
         <nav className='navbar'>
-            <a className='logo' href='/'><img src="Rodrigo_Santos_Logo.png" alt="Rodrigo Santos" /></a>
+            <a className='logo' href='/'><img src="Rodrigo_Santos_Logo.webp" alt="Rodrigo Santos" /></a>
 
             <ul className="nav-links">
                 {pages.map((page, index) => {
