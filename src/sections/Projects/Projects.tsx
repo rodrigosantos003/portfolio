@@ -66,22 +66,12 @@ export default function Projects() {
         return result;
     }
 
-    const imageExists = (imagePath: string) => {
-        const http = new XMLHttpRequest();
-        http.open('HEAD', imagePath, false);
-        http.send();
-        return http.status !== 404;
-    }
-
-
     return <section id="Projects">
         <h1>Projects</h1>
 
         <div className="card-grid">
             {currentData.map((repo, index) => {
-                const projectsImages = '../../../projects';
-                const imagePath = `${projectsImages}/${repo.name}.png`;
-                const defaultPath = `${projectsImages}/default.png`;
+                const imagePath = `../../../projects/${repo.name}.png`;
 
                 return (
                     repo.name != "rodrigosantos003" &&
@@ -89,7 +79,7 @@ export default function Projects() {
                         title={transformText(repo.name)}
                         content={repo.description}
                         key={`${repo}_${index}`}
-                        imageUrl={imageExists(imagePath) ? imagePath : defaultPath}
+                        imageUrl={imagePath}
                     />
                 );
             })}
