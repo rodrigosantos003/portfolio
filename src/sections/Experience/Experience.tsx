@@ -1,9 +1,8 @@
 "use client"
 
-import Timeline from "../../Timeline/Timeline";
-import workExperienceData from '../../../data/work_experience.json';
+import Timeline from "../../components/Timeline/Timeline";
+import workExperienceData from '../../data/work_experience.json';
 import { MouseEventHandler, useEffect, useState } from "react";
-
 
 export default function Experience() {
     const [years, setYears] = useState<string[]>([]);
