@@ -74,7 +74,7 @@ export default function Projects() {
     }
 
 
-    return <>
+    return <section id="Projects">
         <h1>Projects</h1>
 
         <div className="card-grid">
@@ -101,5 +101,5 @@ export default function Projects() {
             )}
         </div>
 
-    </>
+    </section>
 }
