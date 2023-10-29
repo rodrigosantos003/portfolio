@@ -17,7 +17,7 @@ export default function Experience() {
         const clickedYear = ev.currentTarget.textContent ? ev.currentTarget.textContent : "";
         setSelectedYear(clickedYear);
 
-        const listItems = document.querySelectorAll('.timeline li');
+        const listItems = document.querySelectorAll('.timeline-content');
         listItems.forEach((item) => {
             item.classList.remove('active-tl');
         });

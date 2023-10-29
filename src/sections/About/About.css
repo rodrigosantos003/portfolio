@@ -4,11 +4,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    text-align: center;
 }
 
 #About img {
-    width: 20%;
+    width: 20vw;
 }
 
 .text-block {
@@ -16,4 +16,10 @@
     text-align: justify;
     font-size: var(--textSize);
     line-height: 1.5;
+}
+
+@media screen and (max-width: 500px) {
+    .wrapper {
+        display: block;
+    }
 }
