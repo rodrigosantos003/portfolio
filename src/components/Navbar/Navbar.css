@@ -9,7 +9,7 @@
 }
 
 .navbar img {
-    padding-top: 0.938rem;
+    padding-top: 15px;
     width: 5vw;
 }
 
@@ -19,7 +19,7 @@
 }
 
 .nav-item a {
-    padding: 0 0.938rem 0.625rem 0.938rem;
+    padding: 0px 15px 10px 15px;
     text-decoration: none;
     color: var(--primary);
     position: relative;
@@ -30,7 +30,7 @@
     position: absolute;
     width: 100%;
     transform: scaleX(0);
-    height: 0.125;
+    height: 2px;
     bottom: 0;
     left: 0;
     background-color: var(--primary);
@@ -46,5 +46,5 @@
 .logo {
     text-decoration: none;
     color: var(--primary);
-    padding-left: 0.938rem;
+    padding-left: 15px;
 }
