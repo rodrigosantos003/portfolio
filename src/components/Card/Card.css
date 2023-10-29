@@ -22,3 +22,7 @@
 .card p {
     color: var(--background);
 }
+
+.card:hover {
+    cursor: pointer;
+}
