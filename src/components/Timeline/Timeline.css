@@ -51,6 +51,11 @@
     margin: 15px 0;
 }
 
+.connector {
+    flex-grow: 1;
+    border-color: var(--primary);
+}
+
 @media screen and (max-width: 500px) {
     .job-description {
         width: 100%;

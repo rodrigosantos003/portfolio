@@ -18,9 +18,12 @@ const Timeline: React.FC<TimelineProps> = ({ yearsList, clickHandler, selectedEx
 	return <>
 		<div className="timeline">
 			{yearsList.map((year, index) => {
-				return (<div className="timeline-content" onClick={clickHandler} key={`${year}_${index}`}>
-					<h2>{year}</h2>
-				</div>)
+				return (
+					<><div className="timeline-content" onClick={clickHandler} key={`${year}_${index}`}>
+						<h2>{year}</h2>
+					</div>
+						{index < yearsList.length - 1 && <hr className='connector'></hr>}
+					</>)
 			})}
 		</div >
 
