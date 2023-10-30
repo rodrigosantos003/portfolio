@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { logPageView } from '@/data/GoogleAnalytics';
+import ReactGA from 'react-ga';
 
 import About from "@/sections/About/About";
 import Contact from "@/sections/Contact/Contact";
@@ -9,8 +9,9 @@ import Projects from "@/sections/Projects/Projects";
 export default function Home() {
   useEffect(() => {
     // Track page view on route change
-    logPageView();
-  }, [location.href]);
+    ReactGA.initialize('G-3728W3QDVY');
+    ReactGA.pageview(window.location.pathname);
+  }, []);
 
   return <main>
     <About />
