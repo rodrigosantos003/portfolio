@@ -19,13 +19,15 @@ const Timeline: React.FC<TimelineProps> = ({ yearsList, clickHandler, selectedEx
 		<div className="timeline">
 			{yearsList.map((year, index) => {
 				return (
-					<><div className="timeline-content" onClick={clickHandler} key={`${year}_${index}`}>
-						<h2>{year}</h2>
-					</div>
-						{index < yearsList.length - 1 && <hr className='connector'></hr>}
-					</>)
+					<React.Fragment key={`${year}_${index}`}>
+						<div className="timeline-content" onClick={clickHandler}>
+							<h2>{year}</h2>
+						</div>
+						{index < yearsList.length - 1 && <hr className="connector" />}
+					</React.Fragment>
+				);
 			})}
-		</div >
+		</div>
 
 		{selectedExperiences ?
 			<div className="job-description">

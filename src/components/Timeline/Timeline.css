@@ -9,11 +9,6 @@
     margin-bottom: 15px;
 }
 
-.timeline-item {
-    display: flex;
-    margin-bottom: 20px;
-}
-
 .timeline-content {
     background-color: var(--background);
     border: 1px solid var(--primary);
