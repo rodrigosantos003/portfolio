@@ -31,7 +31,7 @@ const Card: React.FC<CardProps> = ({ data }) => {
     };
 
     const openItem = () => {
-        window.open(`https://github.com/rodrigosantos003/repositories/${data.name}`, '_blank');
+        window.open(`https://github.com/rodrigosantos003/${data.name}`, '_blank');
     }
 
     return (
