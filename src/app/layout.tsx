@@ -6,6 +6,7 @@ import NavBar from '@/components/Navbar/Navbar';
 export const metadata: Metadata = {
   title: 'Rodrigo Santos',
   description: 'Software Engineer',
+  manifest: '/manifest.json'
 }
 
 export default function RootLayout({
