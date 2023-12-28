@@ -1,18 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Sometype+Mono&display=swap');
-
-:root {
-  --background: #000000;
-  --primary: #f4f4f4;
-  --textSize: 1.1rem;
-  --headingSize: 1.5rem;
-  --subheadingSize: 1.3rem;
-}
-
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Sometype Mono', sans-serif;
-  color: var(--primary);
+  color: #f4f4f4;
 }
 
 html {
@@ -20,17 +9,17 @@ html {
 }
 
 body {
-  background-color: var(--background);
+  background-color: #000;
 }
 
 h1 {
   text-align: center;
-  font-size: var(--headingSize);
+  font-size: 1.5rem;
   margin-bottom: 30px;
 }
 
 h2 {
-  font-size: var(--subheadingSize);
+  font-size: 1.3rem;
 }
 
 section {
@@ -38,5 +27,5 @@ section {
 }
 
 .CookieConsent div {
-  color: var(--background);
+  color: #000;
 }

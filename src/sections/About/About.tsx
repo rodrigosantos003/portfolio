@@ -1,4 +1,5 @@
 import './About.css'
+import Image from 'next/image';
 
 export default function About() {
     return (
@@ -6,7 +7,13 @@ export default function About() {
             <h1>About Me</h1>
 
             <div className="wrapper">
-                <img src="../../../Rodrigo_Santos.webp" alt="About Rodrigo Santos" />
+                <Image
+                    src='/Rodrigo_Santos.webp'
+                    width={270}
+                    height={350}
+                    alt='About Rodrigo Santos'
+                    priority={true}
+                />
 
                 <div className="text-block">
                     As a software developer with 2 years' experience, I like to turn innovative ideas into practical solutions.

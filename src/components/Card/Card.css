@@ -1,8 +1,6 @@
-@import '../../app/global.css';
-
 .card {
-    background-color: var(--primary);
-    border: 1px solid var(--primary);
+    background-color: #f4f4f4;
+    border: 1px solid #f4f4f4;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -10,17 +8,16 @@
 }
 
 .card img {
-    max-width: 100%;
     border-radius: 8px;
 }
 
 .card h2 {
-    color: var(--background);
+    color: #000;
     margin: 10px 0;
 }
 
 .card p {
-    color: var(--background);
+    color: #000;
 }
 
 .card:hover {

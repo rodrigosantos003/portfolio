@@ -1,5 +1,3 @@
-@import "../../app/global.css";
-
 .timeline {
     display: flex;
     flex-direction: row;
@@ -10,8 +8,8 @@
 }
 
 .timeline-content {
-    background-color: var(--background);
-    border: 1px solid var(--primary);
+    background-color: #000;
+    border: 1px solid #f4f4f4;
     padding: 10px;
     border-radius: 10px;
     max-width: 300px;
@@ -23,14 +21,14 @@
 
 .active-tl,
 .active-tl h2 {
-    background-color: var(--primary);
-    color: var(--background);
+    background-color: #f4f4f4;
+    color: #000;
 }
 
 .job-description {
     clear: both;
     text-align: center;
-    border: 1px solid var(--primary);
+    border: 1px solid #f4f4f4;
     border-radius: 10px;
     width: 40%;
     padding: 15px 30px;
@@ -48,7 +46,7 @@
 
 .connector {
     flex-grow: 1;
-    border-color: var(--primary);
+    border-color: #f4f4f4;
 }
 
 @media screen and (max-width: 500px) {

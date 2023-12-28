@@ -7,6 +7,7 @@ import Contact from "@/sections/Contact/Contact";
 import Experience from "@/sections/Experience/Experience";
 import Projects from "@/sections/Projects/Projects";
 import { initGA, logPageView } from './google-analytics';
+import Link from 'next/link';
 
 export default function Home() {
   useEffect(() => {
@@ -21,7 +22,7 @@ export default function Home() {
       declineButtonStyle={{ background: "#" }}>
       This website uses cookies. By browsing the site you consent to its use
 
-      <a href='/privacy-policy'><span style={{ color: "#000000", float: "right", textDecoration: "underline" }}>Privacy Policy</span></a>
+      <Link href='/privacy-policy' style={{ color: "#000000", float: "right", textDecoration: "underline" }}>Privacy Policy</Link>
     </CookieConsent>
 
     <About />

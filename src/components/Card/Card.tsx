@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
 import './Card.css';
 import { GitHubRepo } from '@/data/IGitHubRepo';
 
@@ -7,8 +8,7 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({ data }) => {
-    const defaultPath = '../../../projects/default.webp';
-    const imagePath = `../../../projects/${data.name}.webp`;
+    const [imagePath, setImagePath] = useState(`/projects/${data.name}.webp`);
 
     const generateTitle = (name: string) => {
         let words = name.split("-");
@@ -27,7 +27,8 @@ const Card: React.FC<CardProps> = ({ data }) => {
 
     // Display the default image if the image fails to load
     const handleImageError = (event: React.SyntheticEvent<HTMLImageElement>) => {
-        event.currentTarget.src = defaultPath;
+        const defaultPath = '/projects/default.webp';
+        setImagePath(defaultPath);
     };
 
     const openItem = () => {
@@ -36,7 +37,13 @@ const Card: React.FC<CardProps> = ({ data }) => {
 
     return (
         <div className="card" onClick={openItem}>
-            <img src={imagePath} alt={title} onError={handleImageError} />
+            <Image
+                src={imagePath}
+                width={200}
+                height={120}
+                alt={title}
+                onError={handleImageError}
+            />
             <h2>{title}</h2>
             <p>{data.description}</p>
         </div>

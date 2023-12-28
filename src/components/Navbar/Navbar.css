@@ -1,16 +1,14 @@
-@import "../../app/global.css";
-
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--background);
-    font-size: var(--textSize);
+    background-color: #000;
+    font-size: 1.1rem;
 }
 
 .navbar img {
     padding-top: 15px;
-    width: 5vw;
+    /* width: 5vw; */
 }
 
 .nav-links {
@@ -21,7 +19,7 @@
 .nav-item a {
     padding: 0px 15px 10px 15px;
     text-decoration: none;
-    color: var(--primary);
+    color: #f4f4f4;
     position: relative;
 }
 
@@ -33,7 +31,7 @@
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: var(--primary);
+    background-color: #f4f4f4;
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
 }
@@ -45,6 +43,6 @@
 
 .logo {
     text-decoration: none;
-    color: var(--primary);
+    color: #f4f4f4;
     padding-left: 15px;
 }
