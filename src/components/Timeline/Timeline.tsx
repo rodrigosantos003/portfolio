@@ -11,7 +11,7 @@ interface TimelineProps {
 			role: string;
 			description: string;
 		}[];
-	} | undefined
+	} | undefined | null
 }
 
 const Timeline: React.FC<TimelineProps> = ({ yearsList, clickHandler, selectedExperiences }) => {

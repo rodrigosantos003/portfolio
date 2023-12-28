@@ -15,16 +15,21 @@ export default function Experience() {
 
     const handleClick: MouseEventHandler<HTMLElement> = (ev) => {
         const clickedYear = ev.currentTarget.textContent ? ev.currentTarget.textContent : "";
-        setSelectedYear(clickedYear);
 
         const listItems = document.querySelectorAll('.timeline-content');
         listItems.forEach((item) => {
             item.classList.remove('active-tl');
         });
-        ev.currentTarget.classList.add('active-tl');
+
+        if (selectedYear === clickedYear)
+            setSelectedYear('');
+        else {
+            setSelectedYear(clickedYear);
+            ev.currentTarget.classList.add('active-tl');
+        }
     };
 
-    const selectedExperiences = workExperienceData.data.find(item => item.year === selectedYear);
+    const selectedExperiences = selectedYear ? workExperienceData.data.find(item => item.year === selectedYear) : null;
 
     return (
         <section id="Experience">
