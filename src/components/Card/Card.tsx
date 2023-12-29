@@ -39,9 +39,10 @@ const Card: React.FC<CardProps> = ({ data }) => {
         <div className='card' onClick={openItem}>
             <Image
                 src={imagePath}
-                width={200}
-                height={120}
+                width={250}
+                height={150}
                 alt={title}
+                style={{ borderRadius: '8px', height: 'auto' }}
                 onError={handleImageError}
             />
             <h2>{title}</h2>

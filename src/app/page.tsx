@@ -8,9 +8,6 @@ import Experience from '@/sections/Experience/Experience'
 import Projects from '@/sections/Projects/Projects'
 import { initGA, logPageView } from './google-analytics'
 import Link from 'next/link'
-import dynamic from 'next/dynamic'
-
-const DynamicProjects = dynamic(() => import('@/sections/Projects/Projects'))
 
 export default function Home() {
   useEffect(() => {
@@ -22,7 +19,7 @@ export default function Home() {
     <CookieConsent
       style={{ backgroundColor: '#f4f4f4' }}
       buttonStyle={{ background: '#000000', color: '#f4f4f4' }}
-      declineButtonStyle={{ background: '#' }}>
+      declineButtonStyle={{ background: '#fff' }}>
       This website uses cookies. By browsing the site you consent to its use
 
       <Link href='/privacy-policy' style={{ color: '#000000', float: 'right', textDecoration: 'underline' }}>Privacy Policy</Link>

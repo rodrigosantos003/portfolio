@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import './style.css'
 
 export default function PrivacyPolicy() {
@@ -28,7 +29,7 @@ export default function PrivacyPolicy() {
 
         <h2>Google Analytics</h2>
 
-        <p>We use Google Analytics to analyze the use of our Website. Google Analytics gathers information about website use through cookies. Google’s privacy policy is available at <a href='https://policies.google.com/privacy'>Google Privacy Policy</a>. You can opt-out of Google Analytics tracking by installing the Google Analytics Opt-out Browser Add-on.</p>
+        <p>We use Google Analytics to analyze the use of our Website. Google Analytics gathers information about website use through cookies. Google’s privacy policy is available at <Link href='https://policies.google.com/privacy'>Google Privacy Policy</Link>. You can opt-out of Google Analytics tracking by installing the Google Analytics Opt-out Browser Add-on.</p>
 
         <h2>Information Sharing</h2>
 

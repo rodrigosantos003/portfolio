@@ -13,6 +13,7 @@ export default function About() {
                     height={350}
                     alt='About Rodrigo Santos'
                     priority={true}
+                    style={{ height: 'auto' }}
                 />
 
                 <div className='text-block'>
