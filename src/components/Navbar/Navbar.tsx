@@ -1,12 +1,12 @@
-"use client"
+'use client'
 
-import * as React from 'react';
+import * as React from 'react'
 import './Navbar.css'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
-import Link from 'next/link';
+import Link from 'next/link'
 
-const pages = ['About', 'Experience', "Projects", "Contact"];
+const pages = ['About', 'Experience', 'Projects', 'Contact']
 
 export default function NavBar() {
     return (
@@ -20,17 +20,17 @@ export default function NavBar() {
                 />
             </Link>
 
-            <ul className="nav-links">
-                {usePathname() != "/privacy-policy" ?
+            <ul className='nav-links'>
+                {usePathname() != '/privacy-policy' ?
                     pages.map((page, index) => {
-                        return <li key={index} className="nav-item">
+                        return <li key={index} className='nav-item'>
                             <Link href={`#${page}`}>{page}</Link>
                         </li>
                     })
                     :
-                    <li key={"1"} className="nav-item"><Link href="/">Back to Home</Link></li>}
+                    <li key={'1'} className='nav-item'><Link href='/'>Back to Home</Link></li>}
             </ul>
 
         </nav>
-    );
+    )
 }

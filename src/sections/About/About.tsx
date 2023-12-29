@@ -1,12 +1,12 @@
 import './About.css'
-import Image from 'next/image';
+import Image from 'next/image'
 
 export default function About() {
     return (
-        <section id="About">
+        <section id='About'>
             <h1>About Me</h1>
 
-            <div className="wrapper">
+            <div className='wrapper'>
                 <Image
                     src='/Rodrigo_Santos.webp'
                     width={270}
@@ -15,7 +15,7 @@ export default function About() {
                     priority={true}
                 />
 
-                <div className="text-block">
+                <div className='text-block'>
                     As a software developer with 2 years' experience, I like to turn innovative ideas into practical solutions.
                     My journey into the world of technology has been marked by a curiosity and passion for programming.
                     <br />

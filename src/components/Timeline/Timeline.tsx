@@ -1,36 +1,36 @@
-import React from 'react';
-import './Timeline.css';
+import React from 'react'
+import './Timeline.css'
 
 interface TimelineProps {
-	yearsList: string[];
+	yearsList: string[]
 	clickHandler: React.MouseEventHandler<HTMLElement>;
 	selectedExperiences: {
-		year: string;
+		year: string
 		experiences: {
-			company: string;
-			role: string;
-			description: string;
-		}[];
+			company: string
+			role: string
+			description: string
+		}[]
 	} | undefined | null
 }
 
 const Timeline: React.FC<TimelineProps> = ({ yearsList, clickHandler, selectedExperiences }) => {
 	return <>
-		<div className="timeline">
+		<div className='timeline'>
 			{yearsList.map((year, index) => {
 				return (
 					<React.Fragment key={`${year}_${index}`}>
-						<div className="timeline-content" onClick={clickHandler}>
+						<div className='timeline-content' onClick={clickHandler}>
 							<h2>{year}</h2>
 						</div>
-						{index < yearsList.length - 1 && <hr className="connector" />}
+						{index < yearsList.length - 1 && <hr className='connector' />}
 					</React.Fragment>
 				);
 			})}
 		</div>
 
 		{selectedExperiences ?
-			<div className="job-description">
+			<div className='job-description'>
 				{selectedExperiences?.experiences.map((experience, expIndex) => {
 					return <div key={`${selectedExperiences.year}_${expIndex}`}>
 						<h2>{experience.company}</h2>
@@ -40,11 +40,11 @@ const Timeline: React.FC<TimelineProps> = ({ yearsList, clickHandler, selectedEx
 								<li key={`${selectedExperiences.year}_${expIndex}_${bulletIndex}`}>{bullet}</li>
 							))}
 						</ul>
-						{expIndex < selectedExperiences.experiences.length - 1 && <hr className="job-separator" />}
+						{expIndex < selectedExperiences.experiences.length - 1 && <hr className='job-separator' />}
 					</div>
 				})}
 			</div>
-			: ""}
+			: ''}
 	</>
 };
 

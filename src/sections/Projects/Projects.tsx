@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { useEffect, useState } from 'react'
-import './Projects.css'
+import { useEffect, useState } from 'react';
+import './Projects.css';
 import Card from '@/components/Card/Card';
 import { GitHubRepo } from '@/data/IGitHubRepo';
 
@@ -10,49 +10,61 @@ export default function Projects() {
     const [limit, setLimit] = useState(6);
     const [currentData, setCurrentData] = useState<GitHubRepo[]>([]);
 
-    useEffect(() => {
-        fetch('https://api.github.com/users/rodrigosantos003/repos', {
-            method: 'GET',
-        }).then(response => response.json())
-            .then(data => {
-                if (data.message) console.error(`Error: ${data.message}`)
-                else {
-                    setRepos(data);
-                    setCurrentData(data.slice(0, limit));
-                }
-            })
-            .catch(error => console.error("Error: ", error));
-    }, [])
+    const fetchGitHubRepos = async () => {
+        try {
+            const response = await fetch('https://api.github.com/users/rodrigosantos003/repos', {
+                method: 'GET',
+            });
 
-    //Uptate current data when the "View More" button is clicked
+            if (!response.ok) {
+                throw new Error('Failed to fetch data');
+            }
+
+            const data = await response.json();
+            setRepos(data);
+            setCurrentData(data.slice(0, limit));
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    };
+
+    useEffect(() => {
+        fetchGitHubRepos();
+    }, []);
+
     useEffect(() => {
         setCurrentData(repos.slice(0, limit));
-    }, [limit]);
+    }, [limit, repos]);
 
     const handleLoadMore = () => {
-        setLimit(limit * 2);
-    }
+        setLimit(prevLimit => prevLimit * 2);
+    };
 
-    return <section id="Projects">
-        <h1>Projects</h1>
+    return (
+        <section id='Projects'>
+            <h1>Projects</h1>
 
-        <div className="card-grid">
-            {currentData.map((repo, index) => {
-                return (
-                    repo.name != "rodrigosantos003" &&
-                    <Card
-                        key={`${repo}_${index}`}
-                        data={repo}
-                    />
-                );
-            })}
-        </div>
+            <div className='card-grid'>
+                {currentData.map((repo) => {
+                    if (repo.name !== 'rodrigosantos003') {
+                        return (
+                            <Card
+                                key={repo.id}
+                                data={repo}
+                            />
+                        );
+                    }
+                    return null;
+                })}
+            </div>
 
-        <div className="view-more-container">
             {currentData.length < repos.length && (
-                <button onClick={handleLoadMore} className='view-more'>View More</button>
+                <div className='view-more-container'>
+                    <button onClick={handleLoadMore} className='view-more'>
+                        View More
+                    </button>
+                </div>
             )}
-        </div>
-
-    </section>
+        </section>
+    );
 }
