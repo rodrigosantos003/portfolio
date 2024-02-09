@@ -30,10 +30,21 @@ export default function Projects() {
 
     useEffect(() => {
         fetchGitHubRepos();
+
+        // Clean up
+        return () => {
+            setRepos([]);
+        };
     }, []);
 
     useEffect(() => {
         setCurrentData(repos.slice(0, limit));
+
+        // Clean up
+        return () => {
+            setCurrentData([]);
+        };
+
     }, [limit, repos]);
 
     const handleLoadMore = () => {

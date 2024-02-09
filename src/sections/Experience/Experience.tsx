@@ -11,6 +11,11 @@ export default function Experience() {
     useEffect(() => {
         const yearsFromData = workExperienceData.data.map(item => item.year)
         setYears(yearsFromData)
+
+        // Clean up
+        return () => {
+            setYears([])
+        }
     }, [])
 
     const handleClick: MouseEventHandler<HTMLElement> = (ev) => {

@@ -13,6 +13,11 @@ export default function Home() {
   useEffect(() => {
     initGA()
     logPageView()
+
+    // Clean up
+    return () => {
+      window.removeEventListener('scroll', logPageView)
+    }
   }, [])
 
   return <main>
