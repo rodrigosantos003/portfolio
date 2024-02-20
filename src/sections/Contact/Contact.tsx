@@ -1,15 +1,22 @@
-import Link from 'next/link'
-import './Contact.css'
+import './Contact.css';
+import { ContactPageStrings } from '../../data/PageStrings';
 
-export default function Contact() {
-    return <section id='Contact'>
-        <h1>Contacts</h1>
+interface ContactProps {
+    pageStrings: ContactPageStrings;
+}
+
+const Contact = ({ pageStrings }: ContactProps) => {
+
+    return <section id={pageStrings.title}>
+        <h1>{pageStrings.title}</h1>
 
         <div className='social-links'>
-            <Link href='mailto:rodrigo.s.santos003@gmail.com'>Email</Link>
-            <Link href='https://www.linkedin.com/in/rodrigosantos-softwareengineer/'>LinkedIn</Link>
-            <Link href='https://github.com/rodrigosantos003'>GitHub</Link>
+            <a href='mailto:rodrigo.s.santos003@gmail.com'>Email</a>
+            <a href='https://www.linkedin.com/in/rodrigosantos-softwareengineer/'>LinkedIn</a>
+            <a href='https://github.com/rodrigosantos003'>GitHub</a>
         </div>
 
     </section>
 }
+
+export default Contact;

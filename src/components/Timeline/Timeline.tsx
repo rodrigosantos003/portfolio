@@ -14,7 +14,7 @@ interface TimelineProps {
 	} | undefined | null
 }
 
-const Timeline: React.FC<TimelineProps> = ({ yearsList, clickHandler, selectedExperiences }) => {
+const Timeline = ({ yearsList, clickHandler, selectedExperiences }: TimelineProps) => {
 	return <>
 		<div className='timeline'>
 			{yearsList.map((year, index) => {

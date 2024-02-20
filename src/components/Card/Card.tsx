@@ -1,14 +1,13 @@
-import React, { useState } from 'react'
-import Image from 'next/image'
-import './Card.css'
-import { GitHubRepo } from '@/data/IGitHubRepo'
+import { useState } from 'react';
+import './Card.css';
+import { GitHubRepo } from '../../data/IGitHubRepo';
 
 interface CardProps {
     data: GitHubRepo
 }
 
-const Card: React.FC<CardProps> = ({ data }) => {
-    const [imagePath, setImagePath] = useState(`/projects/${data.name}.webp`)
+const Card = ({ data }: CardProps) => {
+    const [imagePath, setImagePath] = useState(`../../../projects/${data.name}.webp`)
 
     const generateTitle = (name: string) => {
         let words = name.split('-')
@@ -26,7 +25,7 @@ const Card: React.FC<CardProps> = ({ data }) => {
     const title = generateTitle(data.name)
 
     // Display the default image if the image fails to load
-    const handleImageError = (event: React.SyntheticEvent<HTMLImageElement>) => {
+    const handleImageError = () => {
         const defaultPath = '/projects/default.webp'
         setImagePath(defaultPath)
     }
@@ -37,7 +36,7 @@ const Card: React.FC<CardProps> = ({ data }) => {
 
     return (
         <div className='card' onClick={openItem}>
-            <Image
+            <img
                 src={imagePath}
                 width={250}
                 height={150}
