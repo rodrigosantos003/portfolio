@@ -1,5 +1,9 @@
 {
     "EN":{
+        "Cookie":{
+            "description": "This website uses cookies. By browsing the site you consent to its use",
+            "link": "Privacy Policy"
+        },
         "About": {
             "title": "About Me",
             "text": "As a software developer with 2 years' experience, I like to turn innovative ideas into practical solutions. My journey into the world of technology has been marked by a curiosity and passion for programming.\n My knowledge spans several programming languages, including JavaScript, C#, C and Java.These languages are not just tools in my hands, they are the means by which I bring ideas to life and solve complex problems. I enjoy the challenge of creating efficient code needed for real-world applications.\n Being a tech enthusiast, I'm always on the lookout for the latest trends and advances in the industry. \nI'm currently studying Software Engineering at the Polytechnic Institute of Setúbal."
@@ -53,6 +57,10 @@
         }
     },
     "PT":{
+        "Cookie":{
+            "description": "Este site utiliza cookies. Ao navegar no site, consente com a sua utilização",
+            "link": "Política de Privacidade"
+        },
         "About": {
             "title": "Sobre Mim",
             "text": "Como programador com 2 anos de experiência, gosto de transformar ideias inovadoras em soluções práticas. A minha jornada no mundo da tecnologia tem sido marcada por uma curiosidade e paixão pela programação.\n O meu conhecimento abrange várias linguagens de programação, incluindo JavaScript, C#, C e Java. Estas linguagens não são apenas ferramentas nas minhas mãos, são o meio pelo qual dou vida a ideias e resolvo problemas complexos. Gosto do desafio de criar código eficiente necessário para aplicações do mundo real.\n Sendo um entusiasta da tecnologia, estou sempre à procura das últimas tendências e avanços na indústria. \nAtualmente estou a estudar Engenharia de Software no Instituto Politécnico de Setúbal."

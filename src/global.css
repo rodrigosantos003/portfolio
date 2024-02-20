@@ -32,3 +32,13 @@ section {
 .CookieConsent div {
   color: #000;
 }
+
+.privacy-policy {
+  padding: 30px;
+  line-height: 1.5;
+}
+
+.privacy-policy h2 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
