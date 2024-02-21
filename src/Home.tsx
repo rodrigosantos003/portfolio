@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import CookieConsent from 'react-cookie-consent';
 import About from './sections/About/About';
 import Contact from './sections/Contact/Contact';
 import Experience from './sections/Experience/Experience';
 import Projects from './sections/Projects/Projects';
-import { initGA, logPageView } from './google-analytics';
+import ReactGA from 'react-ga4';
 import strings from './data/strings.json';
 import PrivacyPolicy from './PrivacyPolicy';
 import NavBar from './components/Navbar/Navbar';
@@ -14,19 +14,14 @@ export default function Home() {
 
   const [privacyPolicy, setPrivacyPolicy] = useState(false);
 
+  // Google Analytics
+  ReactGA.initialize('G - 3728W3QDVY');
+  ReactGA.send({ hitType: 'pageview', page: '/', title: 'Home' });
+
+  // Display privacy policy
   function displayPrivacyPolicy() {
     setPrivacyPolicy(!privacyPolicy);
   }
-
-  useEffect(() => {
-    initGA();
-    logPageView();
-
-    // Clean up
-    return () => {
-      window.removeEventListener('scroll', logPageView);
-    }
-  }, [])
 
   return <>
     <NavBar privacyPolicy={privacyPolicy} displayPrivacyPolicy={displayPrivacyPolicy} />
