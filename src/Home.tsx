@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import CookieConsent from 'react-cookie-consent';
 import About from './sections/About/About';
 import Contact from './sections/Contact/Contact';
@@ -10,13 +10,21 @@ import PrivacyPolicy from './PrivacyPolicy';
 import NavBar from './components/Navbar/Navbar';
 
 export default function Home() {
-  const language = navigator.language.split('-')[0].toUpperCase();
+  const [language, setLanguage] = useState("EN");
 
   const [privacyPolicy, setPrivacyPolicy] = useState(false);
 
-  // Google Analytics
-  ReactGA.initialize('G - 3728W3QDVY');
-  ReactGA.send({ hitType: 'pageview', page: '/', title: 'Home' });
+  useEffect(() => {
+    // Set language based on browser language
+    const preferredLanguage = navigator.language.split('-')[0].toUpperCase();
+    if (preferredLanguage === 'PT' || preferredLanguage === 'EN') {
+      setLanguage(preferredLanguage);
+    }
+
+    // Trigger Google Analytics
+    ReactGA.initialize('G - 3728W3QDVY');
+    ReactGA.send({ hitType: 'pageview', page: '/', title: 'Home' });
+  }, []);
 
   // Display privacy policy
   function displayPrivacyPolicy() {
