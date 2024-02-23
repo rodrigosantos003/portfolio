@@ -10,7 +10,7 @@ const Card = ({ data }: CardProps) => {
     const [imagePath, setImagePath] = useState(`../../../projects/${data.name}.webp`)
 
     const generateTitle = (name: string) => {
-        let words = name.split('-')
+        const words = name.split('-')
         let result = ''
 
         words.forEach((word) => {

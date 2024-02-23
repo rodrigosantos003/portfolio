@@ -18,7 +18,7 @@ const Experience = ({ pageStrings }: ExperienceProps) => {
         return () => {
             setYears([]);
         }
-    }, [])
+    }, [pageStrings.data]);
 
     const handleClick: MouseEventHandler<HTMLElement> = (ev) => {
         const clickedYear = ev.currentTarget.textContent ? ev.currentTarget.textContent : '';
