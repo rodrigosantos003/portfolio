@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import './Projects.css';
 import Card from '../../components/Card/Card';
 import { GitHubRepo } from '../../data/IGitHubRepo';
@@ -13,23 +13,24 @@ const Projects = ({ pageStrings }: ProjectProps) => {
     const [limit, setLimit] = useState(6);
     const [currentData, setCurrentData] = useState<GitHubRepo[]>([]);
 
-    const fetchGitHubRepos = async () => {
-        try {
-            const response = await fetch('https://api.github.com/users/rodrigosantos003/repos', {
-                method: 'GET',
+    const fetchGitHubRepos = useCallback(() => {
+        fetch('https://api.github.com/users/rodrigosantos003/repos', {
+            method: 'GET',
+        })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('Failed to fetch data');
+                }
+                return response.json();
+            })
+            .then((data) => {
+                setRepos(data);
+                setCurrentData(data.slice(0, limit));
+            })
+            .catch((error) => {
+                console.error('Error fetching data:', error);
             });
-
-            if (!response.ok) {
-                throw new Error('Failed to fetch data');
-            }
-
-            const data = await response.json();
-            setRepos(data);
-            setCurrentData(data.slice(0, limit));
-        } catch (error) {
-            console.error('Error fetching data:', error);
-        }
-    };
+    }, [limit]);
 
     useEffect(() => {
         fetchGitHubRepos();
@@ -38,7 +39,7 @@ const Projects = ({ pageStrings }: ProjectProps) => {
         return () => {
             setRepos([]);
         };
-    }, []);
+    }, [fetchGitHubRepos]);
 
     useEffect(() => {
         setCurrentData(repos.slice(0, limit));
