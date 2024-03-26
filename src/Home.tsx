@@ -22,7 +22,7 @@ export default function Home() {
     }
 
     // Trigger Google Analytics
-    ReactGA.initialize('G - 3728W3QDVY');
+    ReactGA.initialize('G-3728W3QDVY');
     ReactGA.send({ hitType: 'pageview', page: '/', title: 'Home' });
   }, []);
 
