@@ -10,26 +10,27 @@ interface ProjectProps {
 
 const Projects = ({ pageStrings }: ProjectProps) => {
     const [repos, setRepos] = useState<GitHubRepo[]>([]);
-    const [limit, setLimit] = useState(6);
+    const [limit, setLimit] = useState(4);
     const [currentData, setCurrentData] = useState<GitHubRepo[]>([]);
 
-    const fetchGitHubRepos = useCallback(() => {
-        fetch('https://api.github.com/users/rodrigosantos003/repos', {
-            method: 'GET',
-        })
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error('Failed to fetch data');
-                }
-                return response.json();
-            })
-            .then((data) => {
-                setRepos(data);
-                setCurrentData(data.slice(0, limit));
-            })
-            .catch((error) => {
-                console.error('Error fetching data:', error);
+    const fetchGitHubRepos = useCallback(async () => {
+        try {
+            const response = await fetch('https://api.github.com/users/rodrigosantos003/repos');
+            if (!response.ok) {
+                throw new Error('Failed to fetch data');
+            }
+            let data = await response.json();
+
+            // Sort the data by created_at date
+            data.sort((a: GitHubRepo, b: GitHubRepo) => {
+                return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
             });
+
+            setRepos(data);
+            setCurrentData(data.slice(0, limit));
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
     }, [limit]);
 
     useEffect(() => {

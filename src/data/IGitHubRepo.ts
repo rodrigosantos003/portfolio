@@ -16,4 +16,5 @@ export interface GitHubRepo {
     keys_url: string
     collaborators_url: string
     language: string
+    created_at: string
 }
