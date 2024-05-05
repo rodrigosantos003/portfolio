@@ -1,20 +1,7 @@
 import React from 'react'
 import './Timeline.css'
 
-interface TimelineProps {
-	yearsList: string[]
-	clickHandler: React.MouseEventHandler<HTMLElement>;
-	selectedExperiences: {
-		year: string
-		experiences: {
-			company: string
-			role: string
-			description: string
-		}[]
-	} | undefined | null
-}
-
-const Timeline = ({ yearsList, clickHandler, selectedExperiences }: TimelineProps) => {
+const Timeline = ({ yearsList, clickHandler, selectedExperiences }) => {
 	return <>
 		<div className='timeline'>
 			{yearsList.map((year, index) => {

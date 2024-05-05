@@ -1,18 +1,14 @@
 import './About.css';
-import { AboutPageStrings } from '../../data/PageStrings';
+import Image from 'next/image';
 
-interface AboutProps {
-    pageStrings: AboutPageStrings;
-}
-
-const About = ({ pageStrings }: AboutProps) => {
+const About = ({ pageStrings }) => {
     return (
         <section id={pageStrings.title}>
             <h1>{pageStrings.title}</h1>
 
             <div className='wrapper'>
-                <img
-                    src='../../../Rodrigo_Santos.webp'
+                <Image
+                    src='/Rodrigo_Santos.webp'
                     width={270}
                     height={350}
                     alt='About Rodrigo Santos'

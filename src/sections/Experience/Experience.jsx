@@ -1,14 +1,11 @@
-import { ExperiencePageStrings } from '../../data/PageStrings';
+"use client"
+
 import Timeline from '../../components/Timeline/Timeline';
-import { MouseEventHandler, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-interface ExperienceProps {
-    pageStrings: ExperiencePageStrings;
-}
-
-const Experience = ({ pageStrings }: ExperienceProps) => {
-    const [years, setYears] = useState<string[]>([]);
-    const [selectedYear, setSelectedYear] = useState<string>('');
+const Experience = ({ pageStrings }) => {
+    const [years, setYears] = useState([]);
+    const [selectedYear, setSelectedYear] = useState('');
 
     useEffect(() => {
         const yearsFromData = pageStrings.data.map(item => item.year);
@@ -20,7 +17,7 @@ const Experience = ({ pageStrings }: ExperienceProps) => {
         }
     }, [pageStrings.data]);
 
-    const handleClick: MouseEventHandler<HTMLElement> = (ev) => {
+    const handleClick = (ev) => {
         const clickedYear = ev.currentTarget.textContent ? ev.currentTarget.textContent : '';
 
         const listItems = document.querySelectorAll('.timeline-content');

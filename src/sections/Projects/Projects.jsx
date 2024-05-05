@@ -1,17 +1,13 @@
+"use client"
+
 import { useCallback, useEffect, useState } from 'react';
 import './Projects.css';
 import Card from '../../components/Card/Card';
-import { GitHubRepo } from '../../data/IGitHubRepo';
-import { ProjectsPageStrings } from '../../data/PageStrings';
 
-interface ProjectProps {
-    pageStrings: ProjectsPageStrings;
-}
-
-const Projects = ({ pageStrings }: ProjectProps) => {
-    const [repos, setRepos] = useState<GitHubRepo[]>([]);
-    const [limit, setLimit] = useState(4);
-    const [currentData, setCurrentData] = useState<GitHubRepo[]>([]);
+const Projects = ({ pageStrings }) => {
+    const [repos, setRepos] = useState([]);
+    const [limit, setLimit] = useState(6);
+    const [currentData, setCurrentData] = useState([]);
 
     const fetchGitHubRepos = useCallback(async () => {
         try {
@@ -22,7 +18,7 @@ const Projects = ({ pageStrings }: ProjectProps) => {
             let data = await response.json();
 
             // Sort the data by created_at date
-            data.sort((a: GitHubRepo, b: GitHubRepo) => {
+            data.sort((a, b) => {
                 return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
             });
 

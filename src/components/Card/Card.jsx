@@ -1,20 +1,16 @@
-import { useState } from 'react';
-import './Card.css';
-import { GitHubRepo } from '../../data/IGitHubRepo';
+import React, { useState } from 'react'
+import Image from 'next/image'
+import './Card.css'
 
-interface CardProps {
-    data: GitHubRepo
-}
+const Card = ({ data }) => {
+    const [imagePath, setImagePath] = useState(`/projects/${data.name}.webp`)
 
-const Card = ({ data }: CardProps) => {
-    const [imagePath, setImagePath] = useState(`../../../projects/${data.name}.webp`)
-
-    const generateTitle = (name: string) => {
-        const words = name.split('-')
+    const generateTitle = (name) => {
+        let words = name.split('-')
         let result = ''
 
         words.forEach((word) => {
-            if (word.length == 2 || word.length == 3)
+            if (word.length === 2 || word.length === 3)
                 result += word.toUpperCase() + ' '
             else result += word.charAt(0).toUpperCase() + word.slice(1) + ' '
         })
@@ -36,7 +32,7 @@ const Card = ({ data }: CardProps) => {
 
     return (
         <div className='card' onClick={openItem}>
-            <img
+            <Image
                 src={imagePath}
                 width={250}
                 height={150}

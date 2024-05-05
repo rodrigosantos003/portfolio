@@ -1,11 +1,6 @@
 import './Contact.css';
-import { ContactPageStrings } from '../../data/PageStrings';
 
-interface ContactProps {
-    pageStrings: ContactPageStrings;
-}
-
-const Contact = ({ pageStrings }: ContactProps) => {
+const Contact = ({ pageStrings }) => {
 
     return <section id={pageStrings.title}>
         <h1>{pageStrings.title}</h1>
