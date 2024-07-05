@@ -19,3 +19,15 @@
 .card:hover {
     cursor: pointer;
 }
+
+.topics {
+    padding: 5px;
+}
+
+.topics span {
+    color: #f4f4f4;
+    background-color: #000;
+    border-radius: 5px;
+    margin: 5px;
+    display: inline-block;
+}

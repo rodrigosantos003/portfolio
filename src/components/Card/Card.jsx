@@ -3,8 +3,6 @@ import Image from 'next/image'
 import './Card.css'
 
 const Card = ({ data }) => {
-    const [imagePath, setImagePath] = useState(`/projects/${data.name}.webp`)
-
     const generateTitle = (name) => {
         let words = name.split('-')
         let result = ''
@@ -20,27 +18,17 @@ const Card = ({ data }) => {
 
     const title = generateTitle(data.name)
 
-    // Display the default image if the image fails to load
-    const handleImageError = () => {
-        const defaultPath = '/projects/default.webp'
-        setImagePath(defaultPath)
-    }
-
     const openItem = () => {
         window.open(`https://github.com/rodrigosantos003/${data.name}`, '_blank')
     }
 
     return (
         <div className='card' onClick={openItem}>
-            <Image
-                src={imagePath}
-                width={250}
-                height={150}
-                alt={title}
-                style={{ borderRadius: '8px', height: 'auto' }}
-                onError={handleImageError}
-            />
             <h2>{title}</h2>
+            <p className='topics'>{data.topics.map((topic, index) => {
+                return <span key={index}>{topic}</span>
+            })}
+            </p>
             <p>{data.description}</p>
         </div>
     )

@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
 import { useCallback, useEffect, useState } from 'react';
 import './Projects.css';
 import Card from '../../components/Card/Card';
+import ignoredRepos from '@/data/ignored_repos.json'
 
 const Projects = ({ pageStrings }) => {
     const [repos, setRepos] = useState([]);
-    const [limit, setLimit] = useState(6);
-    const [currentData, setCurrentData] = useState([]);
+    const [limit, setLimit] = useState(7);
 
     const fetchGitHubRepos = useCallback(async () => {
         try {
@@ -15,38 +15,20 @@ const Projects = ({ pageStrings }) => {
             if (!response.ok) {
                 throw new Error('Failed to fetch data');
             }
-            let data = await response.json();
-
+            const data = await response.json();
             // Sort the data by created_at date
-            data.sort((a, b) => {
-                return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
-            });
-
-            setRepos(data);
-            setCurrentData(data.slice(0, limit));
+            const sortedData = data.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+            setRepos(sortedData);
         } catch (error) {
             console.error('Error fetching data:', error);
         }
-    }, [limit]);
+    }, []);
 
     useEffect(() => {
         fetchGitHubRepos();
-
-        // Clean up
-        return () => {
-            setRepos([]);
-        };
     }, [fetchGitHubRepos]);
 
-    useEffect(() => {
-        setCurrentData(repos.slice(0, limit));
-
-        // Clean up
-        return () => {
-            setCurrentData([]);
-        };
-
-    }, [limit, repos]);
+    const currentData = repos.slice(0, limit);
 
     const handleLoadMore = () => {
         setLimit(prevLimit => prevLimit * 2);
@@ -55,21 +37,13 @@ const Projects = ({ pageStrings }) => {
     return (
         <section id={pageStrings.title}>
             <h1>{pageStrings.title}</h1>
-
             <div className='card-grid'>
-                {currentData.map((repo) => {
-                    if (repo.name !== 'rodrigosantos003') {
-                        return (
-                            <Card
-                                key={repo.id}
-                                data={repo}
-                            />
-                        );
-                    }
-                    return null;
-                })}
+                {currentData.map((repo) => (
+                    !ignoredRepos.repos.includes(repo.name) && (
+                        <Card key={repo.id} data={repo} />
+                    )
+                ))}
             </div>
-
             {currentData.length < repos.length && (
                 <div className='view-more-container'>
                     <button onClick={handleLoadMore} className='view-more'>
