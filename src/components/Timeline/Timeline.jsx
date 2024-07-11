@@ -1,4 +1,4 @@
-import React from 'react'
+import { Fragment } from 'react';
 import './Timeline.css'
 
 const Timeline = ({ yearsList, clickHandler, selectedExperiences }) => {
@@ -6,12 +6,12 @@ const Timeline = ({ yearsList, clickHandler, selectedExperiences }) => {
 		<div className='timeline'>
 			{yearsList.map((year, index) => {
 				return (
-					<React.Fragment key={`${year}_${index}`}>
+					<Fragment key={`${year}_${index}`}>
 						<div className='timeline-content' onClick={clickHandler}>
 							<h2>{year}</h2>
 						</div>
 						{index < yearsList.length - 1 && <hr className='connector' />}
-					</React.Fragment>
+					</Fragment>
 				);
 			})}
 		</div>
