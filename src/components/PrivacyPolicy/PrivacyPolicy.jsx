@@ -1,7 +1,8 @@
 import Link from 'next/link'
+import './PrivacyPolicy.css'
 
 export default function PrivacyPolicy() {
-    return <main>
+    return <main id='PrivacyPolicy'>
 
         <h1>Privacy Policy</h1>
 

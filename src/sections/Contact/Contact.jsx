@@ -1,9 +1,9 @@
 import './Contact.css';
 
-const Contact = ({ pageStrings }) => {
+const Contact = () => {
 
-    return <section id={pageStrings.title}>
-        <h1>{pageStrings.title}</h1>
+    return <section id='Contacts'>
+        <h1>Contacts</h1>
 
         <div className='social-links'>
             <a href='mailto:rodrigo.s.santos003@gmail.com'>Email</a>

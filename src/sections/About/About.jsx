@@ -1,10 +1,10 @@
 import './About.css';
 import Image from 'next/image';
 
-const About = ({ pageStrings }) => {
+const About = () => {
     return (
-        <section id={pageStrings.title}>
-            <h1>{pageStrings.title}</h1>
+        <section id='About Me'>
+            <h1>About Me</h1>
 
             <div className='wrapper'>
                 <Image
@@ -16,7 +16,12 @@ const About = ({ pageStrings }) => {
                 />
 
                 <div className='text-block'>
-                    {pageStrings.text}
+                    As a software developer with 5 years&apos experience, I like to turn innovative ideas into practical solutions.
+                    My journey into the world of technology has been marked by a curiosity and passion for programming.
+                    My knowledge spans several programming languages, including JavaScript, C#, C and Java.
+                    These languages are not just tools in my hands, they are the means by which I bring ideas to life and solve complex problems.
+                    I enjoy the challenge of creating efficient code needed for real-world applications. Being a tech enthusiast, I&aposm always on the lookout for the latest trends and advances in the industry.
+                    I&aposm currently studying Software Engineering at the Polytechnic Institute of Setúbal.
                 </div>
             </div>
         </section>

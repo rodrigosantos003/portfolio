@@ -3,9 +3,9 @@
 import { useCallback, useEffect, useState } from 'react';
 import './Projects.css';
 import Card from '../../components/Card/Card';
-import ignoredRepos from '@/data/ignored_repos.json'
+import data from '../../data.json'
 
-const Projects = ({ pageStrings }) => {
+const Projects = () => {
     const [repos, setRepos] = useState([]);
     const [limit, setLimit] = useState(7);
 
@@ -15,9 +15,9 @@ const Projects = ({ pageStrings }) => {
             if (!response.ok) {
                 throw new Error('Failed to fetch data');
             }
-            const data = await response.json();
+            const repoData = await response.json();
             // Sort the data by created_at date
-            const sortedData = data.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+            const sortedData = repoData.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
             setRepos(sortedData);
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -35,11 +35,11 @@ const Projects = ({ pageStrings }) => {
     };
 
     return (
-        <section id={pageStrings.title}>
-            <h1>{pageStrings.title}</h1>
+        <section id='Projects'>
+            <h1>Projects</h1>
             <div className='card-grid'>
                 {currentData.map((repo) => (
-                    !ignoredRepos.repos.includes(repo.name) && (
+                    !data.ignoredRepos.includes(repo.name) && (
                         <Card key={repo.id} data={repo} />
                     )
                 ))}
@@ -47,7 +47,7 @@ const Projects = ({ pageStrings }) => {
             {currentData.length < repos.length && (
                 <div className='view-more-container'>
                     <button onClick={handleLoadMore} className='view-more'>
-                        {pageStrings.viewMore}
+                        View More
                     </button>
                 </div>
             )}

@@ -2,20 +2,21 @@
 
 import Timeline from '../../components/Timeline/Timeline';
 import { useEffect, useState } from "react";
+import data from '../../data.json'
 
-const Experience = ({ pageStrings }) => {
+const Experience = () => {
     const [years, setYears] = useState([]);
     const [selectedYear, setSelectedYear] = useState('');
 
     useEffect(() => {
-        const yearsFromData = pageStrings.data.map(item => item.year);
+        const yearsFromData = data.experiences.map(item => item.year);
         setYears(yearsFromData);
 
         // Clean up
         return () => {
             setYears([]);
         }
-    }, [pageStrings.data]);
+    }, []);
 
     const handleClick = (ev) => {
         const clickedYear = ev.currentTarget.textContent ? ev.currentTarget.textContent : '';
@@ -33,12 +34,11 @@ const Experience = ({ pageStrings }) => {
         }
     }
 
-    const selectedExperiences = selectedYear ? pageStrings.data.find(item => item.year === selectedYear) : null;
-
+    const selectedExperiences = selectedYear ? data.experiences.find(item => item.year === selectedYear) : null;
 
     return (
-        <section id={pageStrings.title}>
-            <h1>{pageStrings.title}</h1>
+        <section id='Experience'>
+            <h1>Experience</h1>
 
             <Timeline
                 yearsList={years}

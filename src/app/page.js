@@ -10,18 +10,11 @@ import Projects from '@/sections/Projects/Projects'
 import PrivacyPolicy from '@/components/PrivacyPolicy/PrivacyPolicy'
 import { initGA, logPageView } from './google-analytics'
 import Link from 'next/link'
-import strings from '@/data/strings'
 
 export default function Home() {
-  const [language, setLanguage] = useState("EN");
   const [privacyPolicy, setPrivacyPolicy] = useState(false);
 
   useEffect(() => {
-    // Set language based on browser language
-    const preferredLanguage = navigator.language.split('-')[0].toUpperCase();
-    if (preferredLanguage === 'PT' || preferredLanguage === 'EN') {
-      setLanguage(preferredLanguage);
-    }
 
     initGA()
     logPageView()
@@ -38,25 +31,25 @@ export default function Home() {
   }
 
   return <main>
-    <NavBar />
+    <NavBar isPrivacyPolicyOn={privacyPolicy} />
 
     <CookieConsent
       style={{ backgroundColor: '#f4f4f4' }}
       buttonStyle={{ background: '#000000', color: '#f4f4f4' }}
       declineButtonStyle={{ background: '#fff' }}>
-      {strings[language].Cookie.description}
+      This website uses cookies. By browsing the site you consent to its use
 
       <Link href='#' onClick={displayPrivacyPolicy}
         style={{ color: '#000000', float: 'right', textDecoration: 'underline' }}>
-        {strings[language].Cookie.link}
+        Privacy Policy
       </Link>
     </CookieConsent>
 
     {privacyPolicy ? <PrivacyPolicy /> : <>
-      <About pageStrings={strings[language].About} />
-      <Experience pageStrings={strings[language].Experience} />
-      <Projects pageStrings={strings[language].Projects} />
-      <Contact pageStrings={strings[language].Contact} />
+      <About />
+      <Experience />
+      <Projects />
+      <Contact />
     </>}
   </main >
 }
