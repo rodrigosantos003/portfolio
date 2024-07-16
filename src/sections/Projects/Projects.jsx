@@ -12,8 +12,8 @@ const Projects = () => {
     useEffect(() => {
         // Load repos from GitHub
         fetch('https://api.github.com/users/rodrigosantos003/repos')
-            .then(async (response) => {
-                const repoData = await response.json();
+            .then(res=>res.json())
+            .then(repoData => {
 
                 // Sort the data by created_at date
                 const sortedData = repoData.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
