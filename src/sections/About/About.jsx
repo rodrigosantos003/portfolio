@@ -1,6 +1,12 @@
 import './About.css';
 import Image from 'next/image';
 
+const calculateExperience = () => {
+    var ageDifMs = Date.now() - Date.UTC(2018, 10);
+    var ageDate = new Date(ageDifMs);
+    return Math.abs(ageDate.getUTCFullYear() - 1970);
+}
+
 const About = () => {
     return (
         <section id='About Me'>
@@ -16,7 +22,7 @@ const About = () => {
                 />
 
                 <div className='text-block'>
-                    As a software developer with 5 years&apos; experience, I like to turn innovative ideas into practical solutions.
+                    As a software developer with {calculateExperience()} years of experience, I like to turn innovative ideas into practical solutions.
                     My journey into the world of technology has been marked by a curiosity and passion for programming.
                     My knowledge spans several programming languages, including JavaScript, C#, C and Java.
                     These languages are not just tools in my hands, they are the means by which I bring ideas to life and solve complex problems.
