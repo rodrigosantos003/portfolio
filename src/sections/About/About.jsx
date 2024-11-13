@@ -1,10 +1,21 @@
 import './About.css';
 import Image from 'next/image';
+import data from '../../data.json';
 
 const calculateExperience = () => {
-    var ageDifMs = Date.now() - Date.UTC(2018, 10);
-    var ageDate = new Date(ageDifMs);
-    return Math.abs(ageDate.getUTCFullYear() - 1970);
+    const months = data.experiences.map(item => {
+        let count = 0;
+
+        item.experiences.forEach(experience => count += experience.month_duration);
+
+        return count;
+    });
+
+    var sum = months.reduce((accumulator, currentValue) => {
+        return accumulator + currentValue
+      },0);
+    
+    return Math.ceil(sum / 12);
 }
 
 const About = () => {

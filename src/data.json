@@ -12,7 +12,8 @@
                 {
                     "company": "Computer Engineering Course Group of the Academic Association of the Polytechnic Institute of Setúbal",
                     "role": "Secretary Member",
-                    "description": "Collaboration in the activities of the Academic Association of the Polytechnic Institute of Setúbal;Planning and managing activities aimed at Computer Engineering students;Communicating with the various members of the Nucleus and AAPIS; Collaboration with the course coordinator"
+                    "description": "Collaboration in the activities of the Academic Association of the Polytechnic Institute of Setúbal;Planning and managing activities aimed at Computer Engineering students;Communicating with the various members of the Nucleus and AAPIS; Collaboration with the course coordinator",
+                    "month_duration": 0
                 }
             ]
         },
@@ -22,7 +23,8 @@
                 {
                     "company": "RightCo",
                     "role": "Software Development Intern",
-                    "description": "Contribution to the development of a geographically localized data system, using React.js for the frontend and Node.js for the backend; Implementation of automated tests using the Puppeteer library, which led to simplification of the quality control process, resulting in a 30% reduction in reported bugs and a 20% increase in development speed; Code optimization, resulting in improved user experience with a 15% reduction in response times and a 25% reduction in resource consumption"
+                    "description": "Contribution to the development of a geographically localized data system, using React.js for the frontend and Node.js for the backend; Implementation of automated tests using the Puppeteer library, which led to simplification of the quality control process, resulting in a 30% reduction in reported bugs and a 20% increase in development speed; Code optimization, resulting in improved user experience with a 15% reduction in response times and a 25% reduction in resource consumption",
+                    "month_duration": 5
                 }
             ]
         },
@@ -32,12 +34,14 @@
                 {
                     "company": "Wyntegrate",
                     "role": "Software Development Intern",
-                    "description": "Development of an employee document management application in Flutter web, resulting in a good user experience thanks to the minimalist design and code; API development and testing using Postman"
+                    "description": "Development of an employee document management application in Flutter web, resulting in a good user experience thanks to the minimalist design and code; API development and testing using Postman",
+                    "month_duration": 3
                 },
                 {
                     "company": "Wyntegrate",
                     "role": "Software Developer",
-                    "description": "Development of an application for reading QR Codes in Flutter, having the application been fully developed and with a good user experience by processing data as efficiently as possible and minimalist design"
+                    "description": "Development of an application for reading QR Codes in Flutter, having the application been fully developed and with a good user experience by processing data as efficiently as possible and minimalist design",
+                    "month_duration": 3
                 }
             ]
         },
@@ -47,7 +51,8 @@
                 {
                     "company": "Secretaria-Geral do Ambiente",
                     "role": "IT Intern",
-                    "description": "Helpdesk; Development of a web scrapper using VBA; PC configuration; Phone configuration; Software Installation"
+                    "description": "Helpdesk; Development of a web scrapper using VBA; PC configuration; Phone configuration; Software Installation",
+                    "month_duration": 2
                 }
             ]
         }
