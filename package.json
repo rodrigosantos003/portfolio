@@ -9,16 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@vercel/analytics": "^1.2.2",
-    "next": "^14.2.12",
-    "react": "^18",
+    "@vercel/analytics": "^1.4.1",
+    "next": "^15.1.2",
+    "react": "^19",
     "react-cookie-consent": "^9.0.0",
-    "react-dom": "^18",
+    "react-dom": "^19",
     "react-ga4": "^2.1.0",
-    "sharp": "^0.33.3"
+    "sharp": "^0.33.5"
   },
   "devDependencies": {
-    "eslint": "^8",
-    "eslint-config-next": "14.2.3"
+    "eslint": "^9",
+    "eslint-config-next": "15.1.2"
   }
 }
