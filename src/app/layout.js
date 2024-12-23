@@ -1,5 +1,6 @@
 import { Sometype_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import './global.css'
 
 const sometypeMono = Sometype_Mono({ subsets: ['latin'], display: 'swap', adjustFontFallback: false })
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
       <body className={sometypeMono.className}>
         {children}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
