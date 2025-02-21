@@ -12,7 +12,7 @@
                 {
                     "company": "Board of the General Assembly of the Academic Association of the Polytechnic Institute of Setúbal",
                     "role": "Secretary",
-                    "description": "AAIPS General Meetings; AAIPS election processes (governing bodies and course groups); Collaboration in the AAIPS activities",
+                    "description": "AAPIS General Meetings; AAPIS election processes (governing bodies and course groups); Collaboration in the AAPIS activities",
                     "month_duration": 0
                 }
             ]
@@ -70,6 +70,7 @@
     ],
     "ignoredRepos": [
         "rodrigosantos003",
+        "portfolio",
         "labs-ei"
     ]
 }
