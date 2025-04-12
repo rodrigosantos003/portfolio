@@ -14,6 +14,12 @@
                     "role": "Secretary",
                     "description": "AAPIS General Meetings; AAPIS election processes (governing bodies and course groups); Collaboration in the AAPIS activities",
                     "month_duration": 0
+                },
+                {
+                    "company": "Council of Representatives - Setúbal School of Technology",
+                    "role": "Student Representative",
+                    "description": "The Council of Representatives is the body that provides strategic guidance and oversees compliance with the statutes and mission of ESTSetúbal/IPS.",
+                    "month_duration": 0
                 }
             ]
         },

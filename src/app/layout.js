@@ -19,6 +19,18 @@ export default function RootLayout({ children }) {
     <html lang='en'>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://rodrigosantos.vercel.app/" />
+        <meta property="og:title" content="Rodrigo Santos - Software Engineer" />
+        <meta property="og:description" content="Portfolio of Rodrigo Santos, a software engineer" />
+        <meta property="og:image" content="https://rodrigosantos.vercel.app/Rodrigo_Santos_LinkedIn.png" />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://rodrigosantos.vercel.app/" />
+        <meta property="twitter:title" content="Rodrigo Santos - Software Engineer" />
+        <meta property="twitter:description" content="Portfolio of Rodrigo Santos, a software engineer" />
+        <meta property="twitter:image" content="https://rodrigosantos.vercel.app/Rodrigo_Santos_LinkedIn.png" />
       </head>
 
       <body className={sometypeMono.className}>
