@@ -10,6 +10,12 @@
             "year": "2025",
             "experiences": [
                 {
+                    "company": "Dev2Grow",
+                    "role": "Software Engineer",
+                    "description": "Internship in Software Engineering",
+                    "month_duration": 3
+                },
+                {
                     "company": "Board of the General Assembly of the Academic Association of the Polytechnic Institute of Setúbal",
                     "role": "Secretary",
                     "description": "AAPIS General Meetings; AAPIS election processes (governing bodies and course groups); Collaboration in the AAPIS activities",
