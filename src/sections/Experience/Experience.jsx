@@ -1,52 +1,54 @@
-"use client"
+"use client";
 
-import Timeline from '../../components/Timeline/Timeline';
+import Timeline from "../../components/Timeline/Timeline";
 import { useEffect, useState } from "react";
-import data from '../../data.json'
+import { groupExperiencesByYear } from "@/helpers";
 
 const Experience = () => {
-    const [years, setYears] = useState([]);
-    const [selectedYear, setSelectedYear] = useState('');
+  const [experiences, setExperiences] = useState([]);
+  const [selectedYear, setSelectedYear] = useState("");
 
-    useEffect(() => {
-        const yearsFromData = data.experiences.map(item => item.year);
-        setYears(yearsFromData);
+  useEffect(() => {
+    setExperiences(groupExperiencesByYear());
 
-        // Clean up
-        return () => {
-            setYears([]);
-        }
-    }, []);
+    // Clean up
+    return () => {
+      setExperiences([]);
+    };
+  }, []);
 
-    const handleClick = (ev) => {
-        const clickedYear = ev.currentTarget.textContent ? ev.currentTarget.textContent : '';
+  const handleClick = (ev) => {
+    const clickedYear = ev.currentTarget.textContent
+      ? ev.currentTarget.textContent
+      : "";
 
-        const listItems = document.querySelectorAll('.timeline-content');
-        listItems.forEach((item) => {
-            item.classList.remove('active-tl');
-        })
+    const listItems = document.querySelectorAll(".timeline-content");
+    listItems.forEach((item) => {
+      item.classList.remove("active-tl");
+    });
 
-        if (selectedYear === clickedYear)
-            setSelectedYear('');
-        else {
-            setSelectedYear(clickedYear);
-            ev.currentTarget.classList.add('active-tl');
-        }
+    if (selectedYear === clickedYear) setSelectedYear("");
+    else {
+      setSelectedYear(clickedYear);
+      ev.currentTarget.classList.add("active-tl");
     }
+  };
 
-    const selectedExperiences = selectedYear ? data.experiences.find(item => item.year === selectedYear) : null;
+  const selectedExperiences = selectedYear
+    ? experiences.find((item) => item.year === selectedYear)
+    : null;
 
-    return (
-        <section id='Experience'>
-            <h1>Experience</h1>
+  return (
+    <section id="Experience">
+      <h1>Experience</h1>
 
-            <Timeline
-                yearsList={years}
-                clickHandler={handleClick}
-                selectedExperiences={selectedExperiences}
-            />
-        </section>
-    )
-}
+      <Timeline
+        yearsList={experiences.map((item) => item.year)}
+        clickHandler={handleClick}
+        selectedExperiences={selectedExperiences}
+      />
+    </section>
+  );
+};
 
 export default Experience;

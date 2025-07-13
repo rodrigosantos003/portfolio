@@ -1,88 +1,62 @@
 {
-    "pages":[
-        "About Me",
-        "Experience",
-        "Projects",
-        "Contacts"
-    ],
-    "experiences": [
-        {
-            "year": "2025",
-            "experiences": [
-                {
-                    "company": "Dev2Grow",
-                    "role": "Software Engineer",
-                    "description": "Internship in Software Engineering",
-                    "month_duration": 3
-                },
-                {
-                    "company": "Board of the General Assembly of the Academic Association of the Polytechnic Institute of Setúbal",
-                    "role": "Secretary",
-                    "description": "AAPIS General Meetings; AAPIS election processes (governing bodies and course groups); Collaboration in the AAPIS activities",
-                    "month_duration": 0
-                },
-                {
-                    "company": "Council of Representatives - Setúbal School of Technology",
-                    "role": "Student Representative",
-                    "description": "The Council of Representatives is the body that provides strategic guidance and oversees compliance with the statutes and mission of ESTSetúbal/IPS.",
-                    "month_duration": 0
-                }
-            ]
-        },
-        {
-            "year": "2024",
-            "experiences": [
-                {
-                    "company": "Computer Engineering Course Group of the Academic Association of the Polytechnic Institute of Setúbal",
-                    "role": "Secretary Member",
-                    "description": "Collaboration in the activities of the Academic Association of the Polytechnic Institute of Setúbal;Planning and managing activities aimed at Computer Engineering students;Communicating with the various members of the Nucleus and AAPIS; Collaboration with the course coordinator",
-                    "month_duration": 0
-                }
-            ]
-        },
-        {
-            "year": "2023",
-            "experiences": [
-                {
-                    "company": "RightCo",
-                    "role": "Software Development Intern",
-                    "description": "Contribution to the development of a geographically localized data system, using React.js for the frontend and Node.js for the backend; Implementation of automated tests using the Puppeteer library, which led to simplification of the quality control process, resulting in a 30% reduction in reported bugs and a 20% increase in development speed; Code optimization, resulting in improved user experience with a 15% reduction in response times and a 25% reduction in resource consumption",
-                    "month_duration": 5
-                }
-            ]
-        },
-        {
-            "year": "2021",
-            "experiences": [
-                {
-                    "company": "Wyntegrate",
-                    "role": "Software Development Intern",
-                    "description": "Development of an employee document management application in Flutter web, resulting in a good user experience thanks to the minimalist design and code; API development and testing using Postman",
-                    "month_duration": 3
-                },
-                {
-                    "company": "Wyntegrate",
-                    "role": "Software Developer",
-                    "description": "Development of an application for reading QR Codes in Flutter, having the application been fully developed and with a good user experience by processing data as efficiently as possible and minimalist design",
-                    "month_duration": 3
-                }
-            ]
-        },
-        {
-            "year": "2020",
-            "experiences": [
-                {
-                    "company": "Secretaria-Geral do Ambiente",
-                    "role": "IT Intern",
-                    "description": "Helpdesk; Development of a web scrapper using VBA; PC configuration; Phone configuration; Software Installation",
-                    "month_duration": 2
-                }
-            ]
-        }
-    ],
-    "ignoredRepos": [
-        "rodrigosantos003",
-        "portfolio",
-        "labs-ei"
-    ]
+  "pages": ["About Me", "Experience", "Projects", "Contacts"],
+  "ignoredRepos": ["rodrigosantos003", "portfolio", "labs-ei"],
+  "experiences": [
+    {
+      "company": "Dev2Grow",
+      "role": "Software Engineer",
+      "description": "Development of apps in React Native; Development of apps in Mendix",
+      "start": "2025-04-28",
+      "end": "2025-07-31"
+    },
+    {
+      "company": "Board of the General Assembly of the Academic Association of the Polytechnic Institute of Setúbal",
+      "role": "Secretary",
+      "description": "AAPIS General Meetings; AAPIS election processes (governing bodies and course groups); Collaboration in the AAPIS activities",
+      "start": "2025",
+      "end": "2025"
+    },
+    {
+      "company": "Council of Representatives - Setúbal School of Technology",
+      "role": "Student Representative",
+      "description": "The Council of Representatives is the body that provides strategic guidance and oversees compliance with the statutes and mission of ESTSetúbal/IPS.",
+      "start": "2025",
+      "end": "2025"
+    },
+    {
+      "company": "Computer Engineering Course Group of the Academic Association of the Polytechnic Institute of Setúbal",
+      "role": "Secretary Member",
+      "description": "Collaboration in the activities of the Academic Association of the Polytechnic Institute of Setúbal;Planning and managing activities aimed at Computer Engineering students;Communicating with the various members of the Nucleus and AAPIS; Collaboration with the course coordinator",
+      "start": "2024",
+      "end": "2024"
+    },
+    {
+      "company": "RightCo",
+      "role": "Software Development Intern",
+      "description": "Contribution to the development of a geographically localized data system, using React.js for the frontend and Node.js for the backend; Implementation of automated tests using the Puppeteer library, which led to simplification of the quality control process, resulting in a 30% reduction in reported bugs and a 20% increase in development speed; Code optimization, resulting in improved user experience with a 15% reduction in response times and a 25% reduction in resource consumption",
+      "start": "2023-03-03",
+      "end": "2023-07-03"
+    },
+    {
+      "company": "Wyntegrate",
+      "role": "Software Developer",
+      "description": "Development of an application for reading QR Codes in Flutter, having the application been fully developed and with a good user experience by processing data as efficiently as possible and minimalist design",
+      "start": "2021-08-01",
+      "end": "2021-10-01"
+    },
+    {
+      "company": "Wyntegrate",
+      "role": "Software Development Intern",
+      "description": "Development of an employee document management application in Flutter web, resulting in a good user experience thanks to the minimalist design and code; API development and testing using Postman",
+      "start": "2021-05-01",
+      "end": "2021-07-01"
+    },
+    {
+      "company": "Secretaria-Geral do Ambiente",
+      "role": "IT Intern",
+      "description": "Helpdesk; Development of a web scrapper using VBA; PC configuration; Phone configuration; Software Installation",
+      "start": "2020-02-01",
+      "end": "2020-03-01"
+    }
+  ]
 }
