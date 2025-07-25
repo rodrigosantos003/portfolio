@@ -1,7 +1,7 @@
 "use client";
 
 import Timeline from "../../components/Timeline/Timeline";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { groupExperiencesByYear } from "@/helpers";
 
 const Experience = () => {
@@ -16,6 +16,16 @@ const Experience = () => {
       setExperiences([]);
     };
   }, []);
+
+  const yearsList = useMemo(() => {
+    return experiences.map((item) => item.year);
+  }, [experiences]);
+
+  const selectedExperiences = useMemo(() => {
+    return selectedYear
+      ? experiences.find((item) => item.year === selectedYear)
+      : null;
+  }, [experiences, selectedYear]);
 
   const handleClick = (ev) => {
     const clickedYear = ev.currentTarget.textContent
@@ -34,16 +44,12 @@ const Experience = () => {
     }
   };
 
-  const selectedExperiences = selectedYear
-    ? experiences.find((item) => item.year === selectedYear)
-    : null;
-
   return (
     <section id="Experience">
       <h1>Experience</h1>
 
       <Timeline
-        yearsList={experiences.map((item) => item.year)}
+        yearsList={yearsList}
         clickHandler={handleClick}
         selectedExperiences={selectedExperiences}
       />

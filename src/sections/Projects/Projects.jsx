@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import "./Projects.css";
 import Card from "../../components/Card/Card";
 import data from "../../data.json";
@@ -24,7 +24,17 @@ const Projects = () => {
       });
   }, []);
 
-  const currentData = repos.slice(0, limit);
+  const filteredRepos = useMemo(() => {
+    return repos.filter((repo) => !data.ignoredRepos.includes(repo.name));
+  }, [repos]);
+
+  const currentData = useMemo(() => {
+    return filteredRepos.slice(0, limit);
+  }, [filteredRepos, limit]);
+
+  const showLoadMore = useMemo(() => {
+    return currentData.length < filteredRepos.length;
+  }, [currentData.length, filteredRepos.length]);
 
   const handleLoadMore = () => {
     setLimit((prevLimit) => prevLimit * 2);
@@ -36,14 +46,11 @@ const Projects = () => {
       {currentData.length > 0 ? (
         <>
           <div className="card-grid scrollable">
-            {currentData.map(
-              (repo) =>
-                !data.ignoredRepos.includes(repo.name) && (
-                  <Card key={repo.id} data={repo} />
-                )
-            )}
+            {currentData.map((repo) => (
+              <Card key={repo.id} data={repo} />
+            ))}
           </div>
-          {currentData.length < repos.length && (
+          {showLoadMore && (
             <div className="view-more-container">
               <button onClick={handleLoadMore} className="view-more">
                 View More
