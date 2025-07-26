@@ -25,7 +25,8 @@ const Timeline = ({ yearsList, clickHandler, selectedExperiences }) => {
                 <h2>{experience.company}</h2>
                 <h3>{experience.role}</h3>
                 <h4>
-                  {experience.start} &rarr; {experience.end}
+                  {experience.start} &rarr;{" "}
+                  {experience.end ? experience.end : "Present"}
                 </h4>
                 <ul>
                   {experience.description

@@ -25,9 +25,9 @@ export function calculateExperience() {
 
     const months = data.experiences.map((item) => {
         let count = 0;
-        if (item.start && item.end) {
-            count += monthDiff(item.start, item.end);
-        }
+        const endDate = item.end ? item.end : Date.now();
+
+        count += monthDiff(item.start, endDate);
 
         return count;
     });

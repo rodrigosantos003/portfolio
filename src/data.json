@@ -1,13 +1,12 @@
 {
   "pages": ["About Me", "Experience", "Projects", "Contacts"],
-  "ignoredRepos": ["rodrigosantos003", "portfolio", "labs-ei"],
+  "ignoredRepos": ["rodrigosantos003", "labs-ei"],
   "experiences": [
     {
       "company": "Dev2Grow",
       "role": "Software Engineer",
       "description": "Development of apps in React Native; Development of apps in Mendix",
-      "start": "2025-04-28",
-      "end": "2025-07-31"
+      "start": "2025-04-28"
     },
     {
       "company": "Board of the General Assembly of the Academic Association of the Polytechnic Institute of Setúbal",
