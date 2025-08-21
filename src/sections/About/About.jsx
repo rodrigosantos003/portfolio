@@ -13,7 +13,13 @@ const About = () => {
           width={270}
           height={350}
           alt="About Rodrigo Santos"
-          style={{ height: "auto" }}
+          priority
+          placeholder="blur"
+          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAQIAEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyLli5xJNEsKgs7yNjxCJ5l5aPg8WuYfzj8hbgUKzOOtKqZeM+0FZD9Q3CyYzxLlw/rL9O3d0/0BLFX9zTgfCKhLqbagBhfVCBOkYKpBAy6n/7c8vp0hFRJhzpPmMLEqKPr7Qb1tHYyE5nGlT+CjfJZSNZWzjQdPGpKCkZlm8O7EpFfF7v1LbBEWNjD/P8APKQDzKUWEHuKu+YKa6YUqhttjOZw1Ocp/wB6hE2tXGxmXCaOdIDXOEpVJbmOX0oVJGcyKHn6O5f7/9k="
+          style={{
+            height: "auto",
+            aspectRatio: "270/350",
+          }}
         />
 
         <div className="text-block">

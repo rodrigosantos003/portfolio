@@ -8,6 +8,7 @@ import data from "../../data.json";
 const Projects = () => {
   const [repos, setRepos] = useState([]);
   const [limit, setLimit] = useState(6);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Load repos from GitHub
@@ -18,9 +19,11 @@ const Projects = () => {
           (a, b) => new Date(b.created_at) - new Date(a.created_at)
         );
         setRepos(sortedData);
+        setLoading(false);
       })
       .catch((error) => {
         console.error("Error fetching repos: ", error);
+        setLoading(false);
       });
   }, []);
 
@@ -40,26 +43,35 @@ const Projects = () => {
     setLimit((prevLimit) => prevLimit * 2);
   };
 
+  // Create skeleton cards to prevent layout shift
+  const renderSkeletonCards = () => {
+    return Array.from({ length: 6 }, (_, index) => (
+      <div key={index} className="card skeleton-card">
+        <div className="skeleton-title"></div>
+        <div className="skeleton-topics"></div>
+        <div className="skeleton-description"></div>
+      </div>
+    ));
+  };
+
   return (
     <section id="Projects">
       <h1>Projects</h1>
-      {currentData.length > 0 ? (
-        <>
-          <div className="card-grid scrollable">
-            {currentData.map((repo) => (
-              <Card key={repo.id} data={repo} />
-            ))}
-          </div>
-          {showLoadMore && (
-            <div className="view-more-container">
-              <button onClick={handleLoadMore} className="view-more">
-                View More
-              </button>
-            </div>
-          )}
-        </>
-      ) : (
-        <p>No data available</p>
+      <div className="card-grid scrollable">
+        {loading ? (
+          renderSkeletonCards()
+        ) : currentData.length > 0 ? (
+          currentData.map((repo) => <Card key={repo.id} data={repo} />)
+        ) : (
+          <p>No data available</p>
+        )}
+      </div>
+      {!loading && showLoadMore && (
+        <div className="view-more-container">
+          <button onClick={handleLoadMore} className="view-more">
+            View More
+          </button>
+        </div>
       )}
     </section>
   );

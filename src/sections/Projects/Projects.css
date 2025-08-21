@@ -4,6 +4,54 @@
     grid-gap: 30px;
     max-width: 1000px;
     margin: 0 auto;
+    min-height: 600px;
+    /* Prevent layout shift */
+}
+
+/* Skeleton loading styles */
+.skeleton-card {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    padding: 20px;
+    height: 150px;
+    animation: skeleton-loading 1.5s infinite ease-in-out;
+}
+
+.skeleton-title {
+    height: 24px;
+    background-color: #333;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    width: 70%;
+}
+
+.skeleton-topics {
+    height: 16px;
+    background-color: #333;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    width: 90%;
+}
+
+.skeleton-description {
+    height: 14px;
+    background-color: #333;
+    border-radius: 4px;
+    width: 100%;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.6;
+    }
 }
 
 .view-more-container {

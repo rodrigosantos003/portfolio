@@ -5,6 +5,13 @@
     text-align: center;
 }
 
+.wrapper img {
+    width: 270px;
+    height: 350px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
 .text-block {
     margin-left: 30px;
     text-align: justify;
@@ -15,5 +22,16 @@
 @media screen and (max-width: 500px) {
     .wrapper {
         display: block;
+    }
+
+    .wrapper img {
+        width: 200px;
+        height: 260px;
+        margin: 0 auto 20px;
+        display: block;
+    }
+
+    .text-block {
+        margin-left: 0;
     }
 }

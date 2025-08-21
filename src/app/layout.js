@@ -3,7 +3,13 @@ import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import './global.css'
 
-const sometypeMono = Sometype_Mono({ subsets: ['latin'], display: 'swap', adjustFontFallback: false })
+const sometypeMono = Sometype_Mono({
+  subsets: ['latin'],
+  display: 'swap',
+  adjustFontFallback: true,
+  fallback: ['monospace'],
+  preload: true
+})
 
 export const metadata = {
   title: "Rodrigo Santos - Software Engineer",

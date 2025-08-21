@@ -10,6 +10,8 @@ html {
 
 body {
   background-color: #000;
+  /* Reserve space for cookie consent to prevent CLS */
+  padding-bottom: 80px;
 }
 
 h1 {
@@ -24,6 +26,15 @@ h2 {
 
 section {
   padding: 30px;
+}
+
+/* Cookie consent positioning to prevent layout shift */
+.CookieConsent {
+  position: fixed !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 9999 !important;
 }
 
 .CookieConsent div {
