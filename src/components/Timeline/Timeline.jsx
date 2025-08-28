@@ -2,6 +2,15 @@ import { Fragment } from "react";
 import "./Timeline.css";
 
 const Timeline = ({ yearsList, clickHandler, selectedExperiences }) => {
+  const renderDates = (experience) => {
+    const start = experience.start;
+    const end = experience.end ? experience.end : "Present";
+
+    if (start != end) return `${start} → ${end}`;
+
+    return experience.start;
+  };
+
   return (
     <>
       <div className="timeline">
@@ -24,10 +33,7 @@ const Timeline = ({ yearsList, clickHandler, selectedExperiences }) => {
               <div key={`${selectedExperiences.year}_${expIndex}`}>
                 <h2>{experience.company}</h2>
                 <h3>{experience.role}</h3>
-                <h4>
-                  {experience.start} &rarr;{" "}
-                  {experience.end ? experience.end : "Present"}
-                </h4>
+                <h4>{renderDates(experience)}</h4>
                 <ul>
                   {experience.description
                     .split(";")
