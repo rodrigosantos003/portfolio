@@ -1,6 +1,10 @@
 import "./About.css";
 import Image from "next/image";
-import { calculateExperience } from "../../helpers";
+import {
+  calculateExperience,
+  getCurrentCompany,
+  getCurrentRole,
+} from "../../helpers";
 
 const About = () => {
   return (
@@ -32,8 +36,8 @@ const About = () => {
           to life and solve complex problems. I enjoy the challenge of creating
           efficient code needed for real-world applications. Being a tech
           enthusiast, I&apos;m always on the lookout for the latest trends and
-          advances in the industry. I&apos;m currently studying Software
-          Engineering at the Polytechnic Institute of Setúbal.
+          advances in the industry. I&apos;m currently working as a{" "}
+          {getCurrentRole()} at {getCurrentCompany()}.
         </div>
       </div>
     </section>

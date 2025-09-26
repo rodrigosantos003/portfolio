@@ -39,6 +39,14 @@ export function calculateExperience() {
     return Math.ceil(sum / 12);
 };
 
+export function getCurrentRole() {
+    return data.experiences[0].role;
+}
+
+export function getCurrentCompany() {
+    return data.experiences[0].company;
+}
+
 export function groupExperiencesByYear() {
     const experiencesWithDates = data.experiences.filter(exp => exp.start);
 
