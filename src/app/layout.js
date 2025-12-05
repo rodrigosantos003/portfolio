@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang='en'>
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/icon.ico" sizes="any" />
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://rodrigosantos.vercel.app/" />
