@@ -1,7 +1,9 @@
-import { Fragment } from "react";
+import { Fragment, useMemo } from "react";
 import "./Timeline.css";
 
 const Timeline = ({ yearsList, clickHandler, selectedExperiences }) => {
+  const currentYear = new Date().getFullYear();
+
   const renderDates = (experience) => {
     const start = experience.start;
     const end = experience.end ? experience.end : "Present";
@@ -18,7 +20,7 @@ const Timeline = ({ yearsList, clickHandler, selectedExperiences }) => {
           return (
             <Fragment key={`${year}_${index}`}>
               <div className="timeline-content" onClick={clickHandler}>
-                <h2>{year}</h2>
+                <h2>{year == currentYear ? 'Present' : year}</h2>
               </div>
               {index < yearsList.length - 1 && <hr className="connector" />}
             </Fragment>

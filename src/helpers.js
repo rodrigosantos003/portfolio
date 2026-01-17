@@ -48,16 +48,26 @@ export function getCurrentCompany() {
 }
 
 export function groupExperiencesByYear() {
+    const currentYear = new Date().getFullYear();
+
     const experiencesWithDates = data.experiences.filter(exp => exp.start);
 
     const groupedByYear = experiencesWithDates.reduce((acc, experience) => {
         const year = getDateYear(experience.start);
 
+        if (!acc[currentYear]) {
+            acc[currentYear] = [];
+        }
+
         if (!acc[year]) {
             acc[year] = [];
         }
 
-        acc[year].push(experience);
+        if (!('end' in experience)) {
+            acc[currentYear].push(experience);
+        } else {
+            acc[year].push(experience);
+        }
 
         return acc;
     }, {});

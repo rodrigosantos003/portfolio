@@ -8,6 +8,8 @@ const Experience = () => {
   const [experiences, setExperiences] = useState([]);
   const [selectedYear, setSelectedYear] = useState("");
 
+  const currentYear = new Date().getFullYear();
+
   useEffect(() => {
     setExperiences(groupExperiencesByYear());
 
@@ -23,7 +25,7 @@ const Experience = () => {
 
   const selectedExperiences = useMemo(() => {
     return selectedYear
-      ? experiences.find((item) => item.year === selectedYear)
+      ? experiences.find((item) => selectedYear === 'Present' ? currentYear : item.year === selectedYear )
       : null;
   }, [experiences, selectedYear]);
 
