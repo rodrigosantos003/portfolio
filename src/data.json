@@ -5,7 +5,7 @@
     {
       "company": "Dev2Grow",
       "role": "Software Engineer",
-      "description": "Development of React Native apps; Development of React apps; Development of Mendix apps; Development of Node.js API's with Express and MongoDB; Implementation of unit tests with Vitest",
+      "description": "Development of API's in Node.js (Express framework) with MongoDB databases; Development of web client apps and backoffices in React;  Development of mobile apps in React Native (Expo framework); Development of web and native apps in Mendix",
       "start": "2025-04-28"
     },
     {
@@ -18,7 +18,7 @@
     {
       "company": "Council of Representatives - Setúbal School of Technology",
       "role": "Student Representative",
-      "description": "Strategic guidance and supervision of compliance with the statutes and mission of ESTSetúbal/IPS",
+      "description": "This governing body is responsible to provide strategic guidance and supervision of compliance with the statutes and mission of ESTSetúbal/IPS",
       "start": "2025",
       "end": "2025"
     },
