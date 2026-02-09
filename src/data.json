@@ -5,7 +5,7 @@
     {
       "company": "Dev2Grow",
       "role": "Software Engineer",
-      "description": "Development of API's in Node.js (Express framework) with MongoDB databases; Development of web client apps and backoffices in React;  Development of mobile apps in React Native (Expo framework); Development of web and native apps in Mendix",
+      "description": "Development of API's in Node.js (Express framework) with MongoDB databases; Development of web client apps and backoffices in React;  Development of mobile apps in React Native (Expo framework); Development of web and native apps in Mendix; Implementation of unit tests with Vitest",
       "start": "2025-04-28"
     },
     {

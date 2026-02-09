@@ -1,4 +1,4 @@
-name: Update modules
+name: Update packages
 
 on:
   schedule:
@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  update-modules:
+  update-packages:
     runs-on: ubuntu-latest
 
     steps:
@@ -20,31 +20,31 @@ jobs:
           node-version: "24"
 
       - name: Install dependencies
-        run: npm install
+        run: yarn install
 
-      - name: Update npm modules
-        run: npm update
+      - name: Update packages
+        run: yarn upgrade
 
       - name: Restore build from cache
         uses: actions/cache@v4
         with:
           path: |
-            ~/.npm
+            ~/.cache/yarn
             ${{ github.workspace }}/.next/cache
           # Generate a new cache whenever packages or source files change.
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
           # If source files changed but packages didn't, rebuild from a prior cache.
           restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-
 
       - name: Run build
-        run: npm run build
+        run: yarn build
 
       - name: Commit and push changes
         if: success()
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add package-lock.json
-          git commit -m "chore: Update npm modules"
+          git add yarn.lock
+          git commit -m "chore: Update packages"
           git push
