@@ -31,13 +31,13 @@ const About = () => {
           experience, I like to turn innovative ideas into practical solutions.
           My journey into the world of technology has been marked by a curiosity
           and passion for programming. My knowledge spans several programming
-          languages, including JavaScript, C#, C and Java. These languages are
-          not just tools in my hands, they are the means by which I bring ideas
-          to life and solve complex problems. I enjoy the challenge of creating
-          efficient code needed for real-world applications. Being a tech
-          enthusiast, I&apos;m always on the lookout for the latest trends and
-          advances in the industry. I&apos;m currently working as a{" "}
-          {getCurrentRole()} at {getCurrentCompany()}.
+          languages, including React/React Native, NodeJS and MongoDB. These
+          languages are not just tools in my hands, they are the means by which
+          I bring ideas to life and solve complex problems. I enjoy the
+          challenge of creatings efficient code needed for real-world
+          applications. Being a tech enthusiast, I&apos;m always on the lookout
+          for the latest trends and advances in the industry. I&apos;m currently
+          working as a {getCurrentRole()} at {getCurrentCompany()}.
         </div>
       </div>
     </section>
