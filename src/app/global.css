@@ -1,7 +1,16 @@
+:root {
+  --color-primary: #0A192F;
+  --color-primary-light: #112240;
+  --color-accent: #64FFDA;
+  --color-text: #CCD6F6;
+  --color-text-light: #E6F1FF;
+  --color-text-muted: #8892B0;
+}
+
 * {
   margin: 0;
   padding: 0;
-  color: #f4f4f4;
+  color: var(--color-text);
 }
 
 html {
@@ -9,7 +18,7 @@ html {
 }
 
 body {
-  background-color: #000;
+  background-color: var(--color-primary);
   /* Reserve space for cookie consent to prevent CLS */
   padding-bottom: 80px;
 }
@@ -38,5 +47,5 @@ section {
 }
 
 .CookieConsent div {
-  color: #000;
+  color: var(--color-primary);
 }

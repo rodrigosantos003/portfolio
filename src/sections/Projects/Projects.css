@@ -10,7 +10,7 @@
 
 /* Skeleton loading styles */
 .skeleton-card {
-    background-color: #1a1a1a;
+    background-color: var(--color-primary-light);
     border-radius: 10px;
     padding: 20px;
     height: 150px;
@@ -19,7 +19,7 @@
 
 .skeleton-title {
     height: 24px;
-    background-color: #333;
+    background-color: var(--color-text-muted);
     border-radius: 4px;
     margin-bottom: 15px;
     width: 70%;
@@ -27,7 +27,7 @@
 
 .skeleton-topics {
     height: 16px;
-    background-color: #333;
+    background-color: var(--color-text-muted);
     border-radius: 4px;
     margin-bottom: 15px;
     width: 90%;
@@ -35,7 +35,7 @@
 
 .skeleton-description {
     height: 14px;
-    background-color: #333;
+    background-color: var(--color-text-muted);
     border-radius: 4px;
     width: 100%;
 }
@@ -64,18 +64,20 @@
     height: 50px;
     text-align: center;
     margin: 0 auto;
-    color: #000;
-    border-color: #f4f4f4;
+    color: var(--color-accent);
+    background-color: var(--color-primary);
+    border-color: var(--color-accent);
     border-style: solid;
     border-radius: 10px;
+    font-size: 1rem;
 }
 
 .view-more:hover {
     transition: .3s;
     cursor: pointer;
-    color: #f4f4f4;
-    background-color: #000;
-    border-color: #f4f4f4;
+    color: var(--color-primary);
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
 }
 
 p {
@@ -88,7 +90,7 @@ p {
     overflow-x: hidden;
     padding-right: 10px;
     scrollbar-width: thin;
-    scrollbar-color: #888 #f1f1f1;
+    scrollbar-color: var(--color-text-muted) var(--color-primary-light);
 }
 
 .scrollable::-webkit-scrollbar {
@@ -96,15 +98,15 @@ p {
 }
 
 .scrollable::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: var(--color-primary-light);
     border-radius: 4px;
 }
 
 .scrollable::-webkit-scrollbar-thumb {
-    background: #888;
+    background: var(--color-text-muted);
     border-radius: 4px;
 }
 
 .scrollable::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: var(--color-accent);
 }
