@@ -113,20 +113,26 @@
 
 @media screen and (max-width: 768px) {
     .timeline {
+        flex-direction: column;
+        align-items: center;
         gap: 0;
         padding: 0 8px;
+        margin-bottom: 24px;
     }
 
     .timeline-content {
-        padding: 8px 14px;
+        padding: 8px 16px;
     }
 
     .timeline-content h2 {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
     }
 
     .connector {
-        width: 16px;
+        width: 2px;
+        height: 20px;
+        background: linear-gradient(180deg, var(--color-border), rgba(56, 189, 248, 0.3), var(--color-border));
+
     }
 
     .job-description {

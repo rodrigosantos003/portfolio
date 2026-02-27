@@ -7,14 +7,14 @@ import {
 } from "../../helpers";
 
 const About = () => {
+  const experienceYears = calculateExperience();
   return (
     <section id="About Me" className="about-section">
       <div className="hero-intro">
         <p className="greeting">Hello, I&apos;m</p>
         <h1 className="hero-name">Rodrigo Santos</h1>
         <p className="hero-tagline">
-          Software Engineer &middot; {calculateExperience()}+ years of
-          experience
+          Software Engineer &middot; {experienceYears}+ years of experience
         </p>
       </div>
 
@@ -37,10 +37,10 @@ const About = () => {
 
         <div className="text-block">
           <p>
-            As a software developer with {calculateExperience()} years of
-            experience, I like to turn innovative ideas into practical
-            solutions. My journey into the world of technology has been marked
-            by a curiosity and passion for programming.
+            As a software developer with {experienceYears} years of experience,
+            I like to turn innovative ideas into practical solutions. My journey
+            into the world of technology has been marked by a curiosity and
+            passion for programming.
           </p>
           <p>
             My knowledge spans several programming languages and frameworks,
