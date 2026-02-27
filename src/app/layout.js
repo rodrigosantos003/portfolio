@@ -1,6 +1,7 @@
 import { Inter, Fira_Code } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import QueryProvider from './QueryProvider'
 import './global.css'
 
 const inter = Inter({
@@ -46,7 +47,9 @@ export default function RootLayout({ children }) {
       </head>
 
       <body className={inter.className}>
-        {children}
+        <QueryProvider>
+          {children}
+        </QueryProvider>
         <Analytics />
         <SpeedInsights />
       </body>
