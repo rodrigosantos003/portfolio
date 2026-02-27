@@ -1,35 +1,42 @@
-import './Card.css'
+import "./Card.css";
 
 const Card = ({ data }) => {
-    const generateTitle = (name) => {
-        let words = name.split('-')
-        let result = ''
+  const generateTitle = (name) => {
+    const acronyms = new Set(["api", "cpd", "tsp", "lan", "tp"]);
 
-        words.forEach((word) => {
-            if (word.length <= 3)
-                result += word.toUpperCase() + ' '
-            else result += word.charAt(0).toUpperCase() + word.slice(1) + ' '
-        })
+    return name
+      .split("-")
+      .map((word) =>
+        acronyms.has(word.toLowerCase())
+          ? word.toUpperCase()
+          : word.charAt(0).toUpperCase() + word.slice(1),
+      )
+      .join(" ");
+  };
 
-        return result
-    }
+  const title = generateTitle(data.name);
 
-    const title = generateTitle(data.name)
+  const openItem = () => {
+    window.open(`https://github.com/rodrigosantos003/${data.name}`, "_blank");
+  };
 
-    const openItem = () => {
-        window.open(`https://github.com/rodrigosantos003/${data.name}`, '_blank')
-    }
+  return (
+    <div
+      className="card"
+      onClick={openItem}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => e.key === "Enter" && openItem()}
+    >
+      <h2>{title}</h2>
+      <p className="topics">
+        {data.topics.map((topic, index) => (
+          <span key={index}>{topic}</span>
+        ))}
+      </p>
+      <p>{data.description}</p>
+    </div>
+  );
+};
 
-    return (
-        <div className='card' onClick={openItem}>
-            <h2>{title}</h2>
-            <p className='topics'>{data.topics.map((topic, index) => {
-                return <span key={index}>{topic}</span>
-            })}
-            </p>
-            <p>{data.description}</p>
-        </div>
-    )
-}
-
-export default Card
+export default Card;

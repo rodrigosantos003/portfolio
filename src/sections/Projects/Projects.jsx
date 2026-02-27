@@ -16,7 +16,7 @@ const Projects = () => {
       .then((res) => res.json())
       .then((repoData) => {
         const sortedData = repoData.sort(
-          (a, b) => new Date(b.created_at) - new Date(a.created_at)
+          (a, b) => new Date(b.created_at) - new Date(a.created_at),
         );
         setRepos(sortedData);
         setLoading(false);
@@ -43,13 +43,12 @@ const Projects = () => {
     setLimit((prevLimit) => prevLimit * 2);
   };
 
-  // Create skeleton cards to prevent layout shift
   const renderSkeletonCards = () => {
     return Array.from({ length: 6 }, (_, index) => (
       <div key={index} className="card skeleton-card">
-        <div className="skeleton-title"></div>
-        <div className="skeleton-topics"></div>
-        <div className="skeleton-description"></div>
+        <div className="skeleton-title" />
+        <div className="skeleton-topics" />
+        <div className="skeleton-description" />
       </div>
     ));
   };

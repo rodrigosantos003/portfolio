@@ -1,13 +1,19 @@
-import { Sometype_Mono } from 'next/font/google'
+import { Inter, Fira_Code } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import './global.css'
 
-const sometypeMono = Sometype_Mono({
+const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
-  adjustFontFallback: true,
-  fallback: ['monospace'],
+  variable: '--font-sans',
+  preload: true
+})
+
+const firaCode = Fira_Code({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-mono',
   preload: true
 })
 
@@ -22,7 +28,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang='en'>
+    <html lang='en' className={`${inter.variable} ${firaCode.variable}`}>
       <head>
         <link rel="icon" href="/icon.ico" sizes="any" />
 
@@ -39,7 +45,7 @@ export default function RootLayout({ children }) {
         <meta property="twitter:image" content="https://rodrigosantos.vercel.app/Rodrigo_Santos_LinkedIn.png" />
       </head>
 
-      <body className={sometypeMono.className}>
+      <body className={inter.className}>
         {children}
         <Analytics />
         <SpeedInsights />

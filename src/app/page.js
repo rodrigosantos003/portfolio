@@ -15,17 +15,14 @@ export default function Home() {
   const [privacyPolicy, setPrivacyPolicy] = useState(false);
 
   useEffect(() => {
-
     initGA()
     logPageView()
 
-    // Clean up
     return () => {
       window.removeEventListener('scroll', logPageView)
     }
   }, [])
 
-  // Display privacy policy
   function displayPrivacyPolicy() {
     setPrivacyPolicy(!privacyPolicy);
   }
@@ -34,13 +31,40 @@ export default function Home() {
     <NavBar isPrivacyPolicyOn={privacyPolicy} />
 
     <CookieConsent
-      style={{ backgroundColor: '#f4f4f4' }}
-      buttonStyle={{ background: '#000000', color: '#f4f4f4' }}
-      declineButtonStyle={{ background: '#fff' }}>
-      This website uses cookies. By browsing the site you consent to its use
+      style={{
+        backgroundColor: 'rgba(11, 15, 26, 0.85)',
+        backdropFilter: 'blur(12px)',
+        borderTop: '1px solid rgba(148, 163, 184, 0.12)',
+        padding: '16px 24px',
+        fontSize: '0.9rem',
+      }}
+      buttonStyle={{
+        background: 'linear-gradient(135deg, #38bdf8, #818cf8)',
+        color: '#0b0f1a',
+        borderRadius: '8px',
+        padding: '10px 24px',
+        fontWeight: '600',
+        fontSize: '0.85rem',
+        border: 'none',
+      }}
+      declineButtonStyle={{
+        background: 'transparent',
+        border: '1px solid rgba(148, 163, 184, 0.3)',
+        color: '#cbd5e1',
+        borderRadius: '8px',
+        padding: '10px 24px',
+        fontSize: '0.85rem',
+      }}>
+      This website uses cookies. By browsing the site you consent to its use.
 
       <Link href='#' onClick={displayPrivacyPolicy}
-        style={{ color: '#000000', float: 'right', textDecoration: 'underline' }}>
+        style={{
+          color: '#38bdf8',
+          float: 'right',
+          textDecoration: 'underline',
+          textUnderlineOffset: '3px',
+          marginLeft: '12px',
+        }}>
         Privacy Policy
       </Link>
     </CookieConsent>
@@ -51,5 +75,5 @@ export default function Home() {
       <Projects />
       <Contact />
     </>}
-  </main >
+  </main>
 }
