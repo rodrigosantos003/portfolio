@@ -24,8 +24,6 @@ const Projects = () => {
 
       return sortedData;
     },
-    initialData: [],
-    staleTime: 24 * 60 * 60 * 1000, // 24 hours
   });
 
   const filteredRepos = useMemo(() => {
