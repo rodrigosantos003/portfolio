@@ -14,8 +14,6 @@ const Card = ({ data }) => {
       .join(" ");
   };
 
-  const title = generateTitle(data.name);
-
   const openItem = () => {
     window.open(`https://github.com/rodrigosantos003/${data.name}`, "_blank");
   };
@@ -28,7 +26,7 @@ const Card = ({ data }) => {
       tabIndex={0}
       onKeyDown={(e) => e.key === "Enter" && openItem()}
     >
-      <h2>{title}</h2>
+      <h2>{generateTitle(data.name)}</h2>
       <p className="topics">
         {data.topics.map((topic, index) => (
           <span key={index}>{topic}</span>

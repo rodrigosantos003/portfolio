@@ -5,6 +5,7 @@ import "./Navbar.css";
 import Image from "next/image";
 import Link from "next/link";
 import data from "../../data.json";
+import { Menu, X } from "lucide-react";
 
 export default function NavBar({ isPrivacyPolicyOn }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -29,9 +30,11 @@ export default function NavBar({ isPrivacyPolicyOn }) {
         onClick={toggleMenu}
         aria-label="Toggle menu"
       >
-        <span />
-        <span />
-        <span />
+        {menuOpen ? (
+          <X size={32} stroke="#cbd5e1" />
+        ) : (
+          <Menu size={32} stroke="#cbd5e1" />
+        )}
       </button>
 
       <ul className={`nav-links ${menuOpen ? "mobile-open" : ""}`}>
