@@ -13,6 +13,12 @@ const Timeline = ({ yearsList, clickHandler, selectedExperiences }) => {
     return experience.start;
   };
 
+  const renderBullets = (description) => {
+    return description.map((bullet, index) => (
+      <li key={`${bullet}_${index}`}>{bullet}</li>
+    ));
+  };
+
   return (
     <>
       <div className="timeline">
@@ -36,17 +42,7 @@ const Timeline = ({ yearsList, clickHandler, selectedExperiences }) => {
                 <h2>{experience.company}</h2>
                 <h3>{experience.role}</h3>
                 <h4>{renderDates(experience)}</h4>
-                <ul>
-                  {experience.description
-                    .split(";")
-                    .map((bullet, bulletIndex) => (
-                      <li
-                        key={`${selectedExperiences.year}_${expIndex}_${bulletIndex}`}
-                      >
-                        {bullet}
-                      </li>
-                    ))}
-                </ul>
+                <ul>{renderBullets(experience.description)}</ul>
                 {expIndex < selectedExperiences.experiences.length - 1 && (
                   <hr className="job-separator" />
                 )}
