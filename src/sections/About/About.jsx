@@ -4,7 +4,7 @@ import {
   calculateExperience,
   getCurrentCompany,
   getCurrentRole,
-} from "../../helpers";
+} from "../../lib/helpers";
 
 const About = () => {
   const experienceYears = calculateExperience();
