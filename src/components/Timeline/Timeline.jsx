@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import "./Timeline.css";
+import { CircleX } from "lucide-react";
 
 const Timeline = ({ yearsList, clickHandler, selectedExperiences }) => {
   const currentYear = new Date().getFullYear();
@@ -36,10 +37,14 @@ const Timeline = ({ yearsList, clickHandler, selectedExperiences }) => {
 
       {selectedExperiences && (
         <div className="job-description">
+          <button className="close-btn" onClick={clickHandler}>
+            <CircleX />
+          </button>
           {selectedExperiences.experiences.map((experience, expIndex) => {
             return (
               <div key={`${selectedExperiences.year}_${expIndex}`}>
                 <h2>{experience.company}</h2>
+
                 <h3>{experience.role}</h3>
                 <h4>{renderDates(experience)}</h4>
                 <ul>{renderBullets(experience.description)}</ul>

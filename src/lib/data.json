@@ -1,14 +1,6 @@
 {
-  "pages": [
-    "About Me",
-    "Experience",
-    "Projects",
-    "Contacts"
-  ],
-  "ignoredRepos": [
-    "rodrigosantos003",
-    "labs-ei"
-  ],
+  "pages": ["About Me", "Experience", "Projects", "Contacts"],
+  "ignoredRepos": ["rodrigosantos003", "labs-ei", "portfolio"],
   "experiences": [
     {
       "company": "Dev2Grow",

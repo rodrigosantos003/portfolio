@@ -2,29 +2,48 @@
 
 import { useState, useMemo } from "react";
 import Card from "../../components/Card/Card";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+
+const ITEMS_PER_PAGE = 6;
 
 export default function ProjectsClient({ repos }) {
-  const [limit, setLimit] = useState(6);
+  const [currentPage, setCurrentPage] = useState(1);
 
-  const currentData = useMemo(() => repos.slice(0, limit), [repos, limit]);
-  const showLoadMore = currentData.length < repos.length;
+  const totalPages = Math.ceil(repos.length / ITEMS_PER_PAGE);
+
+  const currentData = useMemo(() => {
+    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+    return repos.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+  }, [repos, currentPage]);
 
   return (
     <>
-      <div className="card-grid scrollable">
+      <div className="card-grid">
         {currentData.length > 0 ? (
           currentData.map((repo) => <Card key={repo.id} data={repo} />)
         ) : (
           <p>No data available</p>
         )}
       </div>
-      {showLoadMore && (
-        <div className="view-more-container">
+
+      {totalPages > 1 && (
+        <div className="pagination-container">
           <button
-            onClick={() => setLimit((prev) => prev * 2)}
-            className="view-more"
+            onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+            disabled={currentPage === 1}
           >
-            View More
+            <ArrowLeft size={16} style={{ marginBottom: 0 }} />
+          </button>
+          <span>
+            {currentPage} of {totalPages}
+          </span>
+          <button
+            onClick={() =>
+              setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+            }
+            disabled={currentPage === totalPages}
+          >
+            <ArrowRight size={16} />
           </button>
         </div>
       )}

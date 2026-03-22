@@ -4,7 +4,7 @@
     gap: 20px;
     max-width: var(--max-width);
     margin: 0 auto;
-    min-height: 500px;
+    min-height: 400px;
     padding-top: 10px;
 }
 
@@ -55,12 +55,15 @@
     }
 }
 
-.view-more-container {
-    margin: 40px 0 0;
-    text-align: center;
+.pagination-container {
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
 }
 
-.view-more {
+.pagination-container button {
     padding: 12px 36px;
     color: var(--color-accent);
     background: transparent;
@@ -69,14 +72,18 @@
     font-size: 0.9rem;
     font-family: var(--font-mono), monospace;
     font-weight: 500;
-    letter-spacing: 0.02em;
     cursor: pointer;
     transition: all var(--transition-fast);
     position: relative;
     overflow: hidden;
 }
 
-.view-more::before {
+.pagination-container button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pagination-container button::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -86,40 +93,13 @@
     z-index: -1;
 }
 
-.view-more:hover {
+.pagination-container button:hover {
     color: var(--color-primary);
     border-color: var(--color-accent);
     transform: translateY(-2px);
     box-shadow: 0 4px 16px rgba(56, 189, 248, 0.2);
 }
 
-.view-more:hover::before {
+.pagination-container button:hover::before {
     opacity: 1;
-}
-
-.scrollable {
-    max-height: 620px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding-right: 8px;
-    scrollbar-width: thin;
-    scrollbar-color: var(--color-text-muted) transparent;
-}
-
-.scrollable::-webkit-scrollbar {
-    width: 6px;
-}
-
-.scrollable::-webkit-scrollbar-track {
-    background: transparent;
-    border-radius: 3px;
-}
-
-.scrollable::-webkit-scrollbar-thumb {
-    background: var(--color-text-muted);
-    border-radius: 3px;
-}
-
-.scrollable::-webkit-scrollbar-thumb:hover {
-    background: var(--color-accent);
 }
