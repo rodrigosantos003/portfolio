@@ -14,7 +14,7 @@
     padding: 10px 20px;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-sm);
-    background: rgba(26, 34, 64, 0.4);
+    background: var(--color-background);
     backdrop-filter: blur(6px);
     transition: all var(--transition-fast);
     cursor: pointer;
@@ -58,7 +58,7 @@
 
 .job-description {
     text-align: left;
-    background: rgba(26, 34, 64, 0.4);
+    background: var(--color-background);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     padding: 28px 36px;

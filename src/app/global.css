@@ -1,14 +1,16 @@
 :root {
-  --color-primary: #0b0f1a;
-  --color-primary-light: #131a2e;
-  --color-surface: #1a2240;
-  --color-accent: #38bdf8;
-  --color-accent-secondary: #818cf8;
-  --color-text: #cbd5e1;
-  --color-text-light: #f1f5f9;
-  --color-text-muted: #64748b;
-  --color-border: rgba(148, 163, 184, 0.12);
-  --color-glow: rgba(56, 189, 248, 0.15);
+  --color-primary: #95deb2;
+  --color-primary-light: #b9ebcc;
+  --color-surface: #12251c;
+  --color-accent: #1ff875;
+  --color-accent-secondary: #46dca0;
+  --color-text: #e7f3ec;
+  --color-text-light: #f5fbf7;
+  --color-text-muted: #ffffff;
+  --color-border: rgba(147, 175, 160, 0.22);
+  --color-glow: rgba(31, 248, 117, 0.18);
+  --color-background: #0b0f1a;
+
   --radius-sm: 8px;
   --radius-md: 14px;
   --radius-lg: 20px;
@@ -34,7 +36,7 @@ html {
 }
 
 body {
-  background-color: var(--color-primary);
+  background-color: var(--color-background);
   color: var(--color-text);
   padding-bottom: 80px;
   line-height: 1.6;
@@ -137,7 +139,7 @@ section {
   right: 0 !important;
   z-index: 9999 !important;
   backdrop-filter: blur(12px) !important;
-  background: rgba(11, 15, 26, 0.85) !important;
+  background: var(--color-background) !important;
   border-top: 1px solid var(--color-border) !important;
 }
 
