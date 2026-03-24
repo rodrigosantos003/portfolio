@@ -9,7 +9,9 @@ const ITEMS_PER_PAGE = 6;
 export default function ProjectsClient({ repos }) {
   const [currentPage, setCurrentPage] = useState(1);
 
-  const totalPages = Math.ceil(repos.length / ITEMS_PER_PAGE);
+  const totalPages = useMemo(() => {
+    return Math.ceil(repos.length / ITEMS_PER_PAGE);
+  }, [repos]);
 
   const currentData = useMemo(() => {
     const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
