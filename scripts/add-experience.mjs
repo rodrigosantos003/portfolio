@@ -11,7 +11,7 @@ const DATA_PATH = path.resolve(__dirname, '../src/lib/data.json');
 function printHelp() {
     console.log(`Usage:
   npm run add:experience
-  npm run add:experience -- --company "Acme" --role "Engineer" --start "2026-01-01" --description "Did X" --description "Did Y"
+  npm run add:experience --company "Acme" --role "Engineer" --start "2026-01-01" --description "Did X" --description "Did Y"
 
 Options:
   --company <string>           Company name (required)
@@ -105,9 +105,9 @@ async function askOptional(rl, question, validator) {
 }
 
 async function askDescriptions(rl) {
-    const input = (await rl.question('Description bullets (separate with |): ')).trim();
+    const input = (await rl.question('Description bullets (separate with ;): ')).trim();
     const items = input
-        .split('|')
+        .split(';')
         .map((item) => item.trim())
         .filter(Boolean);
 
