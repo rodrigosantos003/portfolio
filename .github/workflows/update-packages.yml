@@ -23,7 +23,7 @@ jobs:
         run: yarn install
 
       - name: Update packages
-        run: yarn upgrade
+        run: yarn upgrade --latest
 
       - name: Restore build from cache
         uses: actions/cache@v4
