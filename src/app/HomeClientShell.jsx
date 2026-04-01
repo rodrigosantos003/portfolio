@@ -22,15 +22,16 @@ export default function HomeClientShell() {
     <>
       <CookieConsent
         style={{
-          backgroundColor: "rgba(11, 15, 26, 0.85)",
+          backgroundColor: "color-mix(in srgb, var(--color-background) 85%, transparent)",
           backdropFilter: "blur(12px)",
-          borderTop: "1px solid rgba(148, 163, 184, 0.12)",
+          borderTop: "1px solid var(--color-border)",
           padding: "16px 24px",
           fontSize: "0.9rem",
         }}
         buttonStyle={{
-          background: "linear-gradient(135deg, #38bdf8, #818cf8)",
-          color: "#0b0f1a",
+          background:
+            "linear-gradient(90deg, var(--color-accent), var(--color-accent-secondary))",
+          color: "var(--color-background)",
           borderRadius: "8px",
           padding: "10px 24px",
           fontWeight: "600",
@@ -39,8 +40,8 @@ export default function HomeClientShell() {
         }}
         declineButtonStyle={{
           background: "transparent",
-          border: "1px solid rgba(148, 163, 184, 0.3)",
-          color: "#cbd5e1",
+          border: "1px solid var(--color-border)",
+          color: "var(--color-text)",
           borderRadius: "8px",
           padding: "10px 24px",
           fontSize: "0.85rem",
@@ -51,7 +52,7 @@ export default function HomeClientShell() {
           href="#"
           onClick={() => setPrivacyPolicy(true)}
           style={{
-            color: "#38bdf8",
+            color: "var(--color-accent)",
             float: "right",
             textDecoration: "underline",
             textUnderlineOffset: "3px",
@@ -69,7 +70,7 @@ export default function HomeClientShell() {
             inset: 0,
             zIndex: 9999,
             overflowY: "auto",
-            background: "#0b0f1a",
+            background: "var(--color-background)",
           }}
           role="dialog"
           aria-modal="true"
@@ -83,8 +84,8 @@ export default function HomeClientShell() {
               display: "block",
               margin: "1rem 1.5rem",
               background: "transparent",
-              border: "1px solid rgba(148, 163, 184, 0.3)",
-              color: "#cbd5e1",
+              border: "1px solid var(--color-border)",
+              color: "var(--color-text)",
               borderRadius: "8px",
               padding: "10px 20px",
               fontSize: "0.85rem",
