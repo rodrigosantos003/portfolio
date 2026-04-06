@@ -1,6 +1,7 @@
 import data from "@/lib/data.json";
 import "./Projects.css";
 import ProjectsClient from "./ProjectsClient";
+import { extractTechStack } from "@/lib/helpers";
 
 export default async function Projects() {
   const res = await fetch(
@@ -25,10 +26,12 @@ export default async function Projects() {
     .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
     .filter((repo) => !data.ignoredRepos.includes(repo.name));
 
+  const techStack = extractTechStack(sortedRepos);
+
   return (
     <section id="Projects">
       <h1>Projects</h1>
-      <ProjectsClient repos={sortedRepos} />
+      <ProjectsClient repos={sortedRepos} techStack={techStack} />
     </section>
   );
 }
