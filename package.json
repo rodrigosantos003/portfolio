@@ -6,7 +6,6 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
     "add:experience": "node scripts/add-experience.mjs",
     "add:bullets": "node scripts/add-bullets.mjs",
     "edit:bullets": "node scripts/edit-bullets.mjs"

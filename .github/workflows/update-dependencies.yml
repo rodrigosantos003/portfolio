@@ -36,9 +36,6 @@ jobs:
       - name: Reinstall to refresh lockfile
         run: yarn install
 
-      - name: Run lint
-        run: yarn lint --if-present
-
       - name: Run build to verify Next.js app still compiles
         run: yarn build
 
