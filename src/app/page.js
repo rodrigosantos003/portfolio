@@ -3,7 +3,7 @@ import About from '@/sections/About/About'
 import Contact from '@/sections/Contact/Contact'
 import Experience from '@/sections/Experience/Experience'
 import Projects from '@/sections/Projects/Projects'
-import HomeClientShell from '@/app/HomeClientShell'
+import Footer from '@/components/Footer/Footer'
 
 export default function Home() {
   return (
@@ -15,7 +15,7 @@ export default function Home() {
         <Projects />
         <Contact />
       </main>
-      <HomeClientShell />
+      <Footer />
     </>
   )
 }
