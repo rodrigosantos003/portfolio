@@ -1,4 +1,4 @@
-import "./Card.css";
+import "./styles.css";
 
 const Card = ({ data }) => {
   const generateTitle = (name) => {

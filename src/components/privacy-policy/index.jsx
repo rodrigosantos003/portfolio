@@ -1,6 +1,6 @@
 import Link from "next/link";
-import ConsentToggle from "@/components/Consent/ConsentToggle";
-import "./PrivacyPolicy.css";
+import ConsentToggle from "@/components/consent/toggle";
+import "./styles.css";
 
 export default function PrivacyPolicy() {
   return (

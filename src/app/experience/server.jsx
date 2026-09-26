@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import Timeline from "../../components/Timeline/Timeline";
+import Timeline from "../../components/timeline";
 
 export default function ExperienceClient({ experiences }) {
   const [selectedYear, setSelectedYear] = useState("");

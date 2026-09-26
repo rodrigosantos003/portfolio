@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import "./Timeline.css";
+import "./styles.css";
 import { CircleX } from "lucide-react";
 
 const Timeline = ({ yearsList, clickHandler, selectedExperiences }) => {

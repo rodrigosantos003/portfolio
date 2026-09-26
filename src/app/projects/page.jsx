@@ -1,6 +1,6 @@
 import data from "@/lib/data.json";
-import "./Projects.css";
-import ProjectsClient from "./ProjectsClient";
+import "./styles.css";
+import ProjectsClient from "./server";
 import { extractTechStack } from "@/lib/helpers";
 
 export default async function Projects() {

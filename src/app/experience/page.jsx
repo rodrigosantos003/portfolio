@@ -1,5 +1,5 @@
 import { groupExperiencesByYear } from "@/lib/helpers";
-import ExperienceClient from "./ExperienceClient";
+import ExperienceClient from "./server";
 
 export default function Experience() {
   const experiences = groupExperiencesByYear();

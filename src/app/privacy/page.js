@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Footer from "@/components/Footer/Footer";
-import PrivacyPolicy from "@/components/PrivacyPolicy/PrivacyPolicy";
+import Footer from "@/components/footer";
+import PrivacyPolicy from "@/components/privacy-policy";
 
 export const metadata = {
   title: "Privacy Policy | Rodrigo Santos",

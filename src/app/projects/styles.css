@@ -158,7 +158,7 @@
 }
 
 .pagination-container button:hover {
-  color: var(--color-muted);
+  color: var(--color-surface);
   border-color: var(--color-accent);
   transform: translateY(-2px);
   box-shadow: 0 4px 16px rgba(56, 189, 248, 0.2);

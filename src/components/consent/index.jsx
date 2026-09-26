@@ -7,7 +7,7 @@ import {
   getAnalyticsConsent,
   setAnalyticsConsent,
 } from "@/lib/analytics-consent";
-import "./ConsentBanner.css";
+import "./styles.css";
 
 export default function ConsentBanner() {
   const [visible, setVisible] = useState(false);

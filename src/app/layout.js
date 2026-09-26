@@ -1,6 +1,7 @@
 import { Inter, Fira_Code } from "next/font/google";
-import AnalyticsGate from "@/components/Consent/AnalyticsGate";
-import ConsentBanner from "@/components/Consent/ConsentBanner";
+import { ReactLenis } from "lenis/react";
+import AnalyticsGate from "@/components/consent/gate";
+import ConsentBanner from "@/components/consent/index";
 import "./global.css";
 
 const inter = Inter({
@@ -68,7 +69,7 @@ export default function RootLayout({ children }) {
       </head>
 
       <body className={inter.className}>
-        {children}
+        <ReactLenis root>{children}</ReactLenis>
         <ConsentBanner />
         <AnalyticsGate />
       </body>

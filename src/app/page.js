@@ -1,9 +1,9 @@
-import NavBar from '@/components/Navbar/Navbar'
-import About from '@/sections/About/About'
-import Contact from '@/sections/Contact/Contact'
-import Experience from '@/sections/Experience/Experience'
-import Projects from '@/sections/Projects/Projects'
-import Footer from '@/components/Footer/Footer'
+import NavBar from "@/components/navbar/index";
+import About from "./about/page";
+import Contact from "./contact/page";
+import Experience from "./experience/page";
+import Projects from "./projects/page";
+import Footer from "@/components/footer/index";
 
 export default function Home() {
   return (
@@ -17,5 +17,5 @@ export default function Home() {
       </main>
       <Footer />
     </>
-  )
+  );
 }

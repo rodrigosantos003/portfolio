@@ -1,4 +1,4 @@
-import "./About.css";
+import "./styles.css";
 import Image from "next/image";
 import {
   calculateExperience,
