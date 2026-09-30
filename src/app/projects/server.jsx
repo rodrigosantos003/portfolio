@@ -8,6 +8,7 @@ const ITEMS_PER_PAGE = 6;
 
 export default function ProjectsClient({ repos, techStack }) {
   const [currentPage, setCurrentPage] = useState(1);
+  const [pageSlide, setPageSlide] = useState(null);
   const [selectedTech, setSelectedTech] = useState([]);
 
   const techOptions = useMemo(() => {
@@ -44,7 +45,13 @@ export default function ProjectsClient({ repos, techStack }) {
 
   useEffect(() => {
     setCurrentPage(1);
+    setPageSlide(null);
   }, [selectedTech]);
+
+  function goToPage(page) {
+    setPageSlide(page > currentPage ? "next" : "prev");
+    setCurrentPage(page);
+  }
 
   function toggleTech(tech) {
     setSelectedTech((prev) => {
@@ -86,7 +93,10 @@ export default function ProjectsClient({ repos, techStack }) {
         </div>
       </div>
 
-      <div className="card-grid">
+      <div
+        key={currentPage}
+        className={`card-grid${pageSlide ? ` is-page-${pageSlide}` : ""}`}
+      >
         {currentData.length > 0 ? (
           currentData.map((repo) => <Card key={repo.id} data={repo} />)
         ) : (
@@ -97,7 +107,7 @@ export default function ProjectsClient({ repos, techStack }) {
       {totalPages > 1 && (
         <div className="pagination-container">
           <button
-            onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+            onClick={() => goToPage(Math.max(currentPage - 1, 1))}
             disabled={currentPage === 1}
           >
             <ArrowLeft size={16} style={{ marginBottom: 0 }} />
@@ -106,9 +116,7 @@ export default function ProjectsClient({ repos, techStack }) {
             {currentPage} of {totalPages}
           </span>
           <button
-            onClick={() =>
-              setCurrentPage((prev) => Math.min(prev + 1, totalPages))
-            }
+            onClick={() => goToPage(Math.min(currentPage + 1, totalPages))}
             disabled={currentPage === totalPages}
           >
             <ArrowRight size={16} />
