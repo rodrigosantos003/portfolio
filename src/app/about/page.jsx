@@ -37,7 +37,7 @@ const About = () => {
 
         <div className="text-block">
           <p>
-            As a software developer with {experienceYears} years of experience,
+            As a software developer with {experienceYears}+ years of experience,
             I like to turn innovative ideas into practical solutions. My journey
             into the world of technology has been marked by a curiosity and
             passion for programming.

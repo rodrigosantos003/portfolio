@@ -35,7 +35,7 @@ export function calculateExperience() {
     return accumulator + currentValue;
   }, 0);
 
-  return Math.ceil(sum / 12);
+  return Math.floor(sum / 12);
 }
 
 export function getCurrentRole() {
