@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import data from "./data.json";
 
 function monthDiff(date1, date2) {
@@ -94,3 +95,33 @@ export function extractTechStack(repos) {
 
   return Array.from(techStack);
 }
+
+const TECHNOLOGIES = [
+  "Node.js",
+  "MongoDB",
+  "PostgreSQL",
+  "AWS",
+  "observability",
+];
+
+const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+export const highlightTechnologies = (text, technologies = TECHNOLOGIES) => {
+  // Longest first, so "Node.js" wins over a hypothetical "Node"
+  const pattern = technologies
+    .slice()
+    .sort((a, b) => b.length - a.length)
+    .map(escapeRegex)
+    .join("|");
+
+  // Capturing group keeps the matches in the split result
+  const regex = new RegExp(`(${pattern})`, "gi");
+
+  return text.split(regex).map((part, i) =>
+    i % 2 === 1 ? (
+      <strong key={i}>{part}</strong>
+    ) : (
+      <Fragment key={i}>{part}</Fragment>
+    )
+  );
+};

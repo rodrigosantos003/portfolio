@@ -4,6 +4,7 @@ import {
   calculateExperience,
   getCurrentCompany,
   getCurrentRole,
+  highlightTechnologies,
 } from "../../lib/helpers";
 
 const About = () => {
@@ -37,17 +38,14 @@ const About = () => {
 
         <div className="text-block">
           <p>
-            As a software developer with {experienceYears}+ years of experience,
-            I like to turn innovative ideas into practical solutions. My journey
-            into the world of technology has been marked by a curiosity and
-            passion for programming.
+            I'm a software engineer with {experienceYears}+ years of experience
+            in software development, specialising in backend development, system
+            integration and production support.
           </p>
           <p>
-            My knowledge spans several programming languages and frameworks,
-            including <strong>React/React Native</strong>,{" "}
-            <strong>Node.js</strong> and <strong>MongoDB</strong>. These are not
-            just tools in my hands — they are the means by which I bring ideas
-            to life and solve complex problems.
+            {highlightTechnologies(
+              "My core skills include building and maintaining REST APIs using Node.js with MongoDB and PostgreSQL databases, AWS infrastructure and observability tools.",
+            )}
           </p>
           <p>
             Being a tech enthusiast, I&apos;m always on the lookout for the

@@ -9,10 +9,11 @@
       "description": [
         "Development of APIs in Node.js with MongoDB and PostgreSQL databases",
         "Development of web client applications and back-office tools in React",
-        "Development of mobile apps in React Native (Expo framework)",
+        "Development of mobile apps in React Native",
         "Development of web and native apps in Mendix",
         "Implementation of unit tests with Vitest",
-        "Integration of software observability using SigNoz"
+        "Integration of software observability using SigNoz",
+        "Acting as the technical representative in client meetings"
       ]
     },
     {
