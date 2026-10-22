@@ -16,4 +16,4 @@ jobs:
         run: |
           curl --fail -sS \
             -H "Authorization: Bearer $CRON_SECRET" \
-            "https://rodrigo-santos.p/api/revalidate"
+            "https://rodrigo-santos.pt/api/revalidate"
