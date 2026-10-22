@@ -5,9 +5,10 @@ import { extractTechStack } from "@/lib/helpers";
 
 export default async function Projects() {
   const res = await fetch(
-    "https://api.github.com/users/rodrigosantos003/repos",
+    "https://api.github.com/users/rodrigosantos003/repos?per_page=100&sort=created&direction=desc",
     {
-      next: { revalidate: 86400 },
+      headers: { Accept: "application/vnd.github+json" },
+      next: { tags: ["repos"] },
     },
   );
 
@@ -22,11 +23,11 @@ export default async function Projects() {
 
   const repos = await res.json();
 
-  const sortedRepos = repos
-    .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
-    .filter((repo) => !data.ignoredRepos.includes(repo.name));
+  const filteredRepos = repos.filter(
+    (repo) => !data.ignoredRepos.includes(repo.name),
+  );
 
-  const techStack = extractTechStack(sortedRepos);
+  const techStack = extractTechStack(filteredRepos);
 
   return (
     <section id="Projects">

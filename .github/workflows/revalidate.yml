@@ -1,0 +1,19 @@
+name: Revalidate after deploy
+
+on:
+  deployment_status:
+
+jobs:
+  revalidate:
+    if: >
+      github.event.deployment_status.state == 'success' &&
+      github.event.deployment.environment == 'Production'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger revalidation
+        env:
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+        run: |
+          curl --fail -sS \
+            -H "Authorization: Bearer $CRON_SECRET" \
+            "https://rodrigo-santos.p/api/revalidate"
