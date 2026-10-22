@@ -32,7 +32,7 @@ export default async function Projects() {
   return (
     <section id="Projects">
       <h1>Projects</h1>
-      <ProjectsClient repos={sortedRepos} techStack={techStack} />
+      <ProjectsClient repos={filteredRepos} techStack={techStack} />
     </section>
   );
 }
