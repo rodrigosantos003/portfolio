@@ -25,6 +25,7 @@ const About = () => {
             src="/Rodrigo_Santos.webp"
             width={270}
             height={350}
+            sizes="(max-width: 768px) 200px, 260px"
             alt="About Rodrigo Santos"
             priority
             placeholder="blur"
