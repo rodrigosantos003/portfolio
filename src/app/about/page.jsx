@@ -41,7 +41,7 @@ const About = () => {
           <p>
             I'm a software engineer with {experienceYears}+ years of experience
             in software development, specialising in backend development, system
-            integration and production support.
+            integration and cloud.
           </p>
           <p>
             {highlightTechnologies(
