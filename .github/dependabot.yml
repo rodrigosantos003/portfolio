@@ -1,6 +1,7 @@
 version: 2
 
 updates:
+  # GitHub Actions
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
@@ -12,3 +13,17 @@ updates:
     labels:
       - "github-actions"
       - "dependencies"
+
+  # Yarn dependencies
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+      time: "03:00"
+      timezone: "Europe/Lisbon"
+    commit-message:
+      prefix: "chore(security)"
+    labels:
+      - "dependencies"
+      - "yarn"
+    open-pull-requests-limit: 5
