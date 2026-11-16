@@ -1,5 +1,7 @@
 import "./styles.css";
 import Image from "next/image";
+import { ArrowRight } from "lucide-react";
+import data from "@/lib/data.json";
 import {
   calculateExperience,
   getCurrentCompany,
@@ -11,21 +13,43 @@ const About = () => {
   const experienceYears = calculateExperience();
   return (
     <section id="About Me" className="about-section">
-      <div className="hero-intro">
-        <p className="greeting">Hello, I&apos;m</p>
-        <h1 className="hero-name">Rodrigo Santos</h1>
-        <p className="hero-tagline">
-          Software Engineer &middot; {experienceYears}+ years of experience
+      <div className="hero">
+        <p className="status-badge">
+          <span className="status-dot" aria-hidden="true" />
+          {getCurrentRole()} at {getCurrentCompany()}
         </p>
+        <h1 className="hero-title">
+          Rodrigo Santos
+          <br />
+          <span>Backend, integrations &amp; cloud</span>
+        </h1>
+        <p className="hero-lead">
+          Software engineer with {experienceYears}+ years of experience building
+          and maintaining REST APIs with Node.js, MongoDB and PostgreSQL,
+          running them on AWS and making them observable.
+        </p>
+        <div className="hero-actions">
+          <a className="btn btn-light" href="#Projects">
+            See my work
+            <ArrowRight size={16} aria-hidden="true" />
+          </a>
+          <a className="btn btn-outline" href="#Contacts">
+            Get in touch
+          </a>
+        </div>
       </div>
 
-      <div className="wrapper">
-        <div className="image-container">
+      <h2 className="section-title">
+        <span className="section-index">01 /</span>About
+      </h2>
+
+      <div className="about-grid">
+        <div className="tile about-portrait reveal">
           <Image
             src="/Rodrigo_Santos.webp"
             width={270}
             height={350}
-            sizes="(max-width: 768px) 200px, 260px"
+            sizes="(max-width: 768px) 240px, 360px"
             alt="About Rodrigo Santos"
             priority
             placeholder="blur"
@@ -37,7 +61,7 @@ const About = () => {
           />
         </div>
 
-        <div className="text-block">
+        <div className="tile about-text reveal">
           <p>
             I'm a software engineer with {experienceYears}+ years of experience
             in software development, specialising in backend development, system
@@ -54,6 +78,15 @@ const About = () => {
             working as a <strong>{getCurrentRole()}</strong> at{" "}
             <strong>{getCurrentCompany()}</strong>.
           </p>
+        </div>
+
+        <div className="tile about-stack reveal">
+          <span className="about-stack__label">Stack</span>
+          <ul>
+            {data.stack.map((tech) => (
+              <li key={tech}>{tech}</li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

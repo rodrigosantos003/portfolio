@@ -62,35 +62,33 @@ export default function ProjectsClient({ repos, techStack }) {
 
   return (
     <>
-      <div className="projects-filters">
-        <div className="projects-filters__header">
-          <span className="projects-filters__label">Tech stack</span>
-          {selectedTech.length > 0 && (
+      <div
+        className="projects-filters"
+        role="group"
+        aria-label="Filter projects by language"
+      >
+        <button
+          type="button"
+          className={`projects-chip ${selectedTech.length === 0 ? "is-active" : ""}`}
+          aria-pressed={selectedTech.length === 0}
+          onClick={() => setSelectedTech([])}
+        >
+          All
+        </button>
+        {techOptions.map((tech) => {
+          const active = selectedTech.includes(tech);
+          return (
             <button
+              key={tech}
               type="button"
-              className="projects-filters__clear"
-              onClick={() => setSelectedTech([])}
+              className={`projects-chip ${active ? "is-active" : ""}`}
+              aria-pressed={active}
+              onClick={() => toggleTech(tech)}
             >
-              Clear
+              {tech}
             </button>
-          )}
-        </div>
-
-        <div className="projects-filters__chips" role="list">
-          {techOptions.map((tech) => {
-            const active = selectedTech.includes(tech);
-            return (
-              <button
-                key={tech}
-                type="button"
-                className={`projects-chip ${active ? "is-active" : ""}`}
-                onClick={() => toggleTech(tech)}
-              >
-                {tech}
-              </button>
-            );
-          })}
-        </div>
+          );
+        })}
       </div>
 
       <div
@@ -100,7 +98,9 @@ export default function ProjectsClient({ repos, techStack }) {
         {currentData.length > 0 ? (
           currentData.map((repo) => <Card key={repo.id} data={repo} />)
         ) : (
-          <p>No projects match the selected tech stack.</p>
+          <p className="projects-empty">
+            No projects match the selected languages.
+          </p>
         )}
       </div>
 
@@ -109,6 +109,7 @@ export default function ProjectsClient({ repos, techStack }) {
           <button
             onClick={() => goToPage(Math.max(currentPage - 1, 1))}
             disabled={currentPage === 1}
+            aria-label="Previous page"
           >
             <ArrowLeft size={16} style={{ marginBottom: 0 }} />
           </button>
@@ -118,6 +119,7 @@ export default function ProjectsClient({ repos, techStack }) {
           <button
             onClick={() => goToPage(Math.min(currentPage + 1, totalPages))}
             disabled={currentPage === totalPages}
+            aria-label="Next page"
           >
             <ArrowRight size={16} />
           </button>

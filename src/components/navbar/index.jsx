@@ -22,44 +22,54 @@ export default function NavBar() {
     event.preventDefault();
     closeMenu();
 
-    const offset = navRef.current ? -navRef.current.offsetHeight : 0;
-    lenis.scrollTo(`#${page}`, { offset });
+    // The navbar floats 16px from the top; leave the same gap below it
+    const offset = navRef.current ? -(navRef.current.offsetHeight + 32) : 0;
+    lenis.scrollTo(`#${CSS.escape(page)}`, { offset });
     window.history.pushState(null, "", `#${encodeURIComponent(page)}`);
   };
 
+  const lastIndex = data.pages.length - 1;
+
   return (
-    <nav className="navbar" ref={navRef}>
-      <Link className="logo" href="/">
-        <Image
-          src="/Rodrigo_Santos_Logo.webp"
-          width={50}
-          height={47}
-          alt="Rodrigo Santos"
-          style={{ height: "auto" }}
-        />
-      </Link>
+    <div className="navbar-wrapper">
+      <nav className="navbar" ref={navRef} aria-label="Primary">
+        <Link className="logo" href="/">
+          <Image
+            src="/Rodrigo_Santos_Logo.webp"
+            width={36}
+            height={34}
+            alt="Rodrigo Santos"
+            style={{ height: "auto" }}
+          />
+        </Link>
 
-      <button
-        className={`hamburger ${menuOpen ? "open" : ""}`}
-        onClick={toggleMenu}
-        aria-label="Toggle menu"
-      >
-        {menuOpen ? (
-          <X size={32} stroke="#cbd5e1" />
-        ) : (
-          <Menu size={32} stroke="#cbd5e1" />
-        )}
-      </button>
+        <button
+          className="hamburger"
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+          aria-expanded={menuOpen}
+          aria-controls="nav-links"
+        >
+          {menuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
 
-      <ul className={`nav-links ${menuOpen ? "mobile-open" : ""}`}>
-        {data.pages.map((page, index) => (
-          <li key={index} className="nav-item">
-            <a href={`#${encodeURIComponent(page)}`} onClick={(event) => scrollToSection(event, page)}>
-              {page}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </nav>
+        <ul
+          id="nav-links"
+          className={`nav-links ${menuOpen ? "mobile-open" : ""}`}
+        >
+          {data.pages.map((page, index) => (
+            <li key={page} className="nav-item">
+              <a
+                href={`#${encodeURIComponent(page)}`}
+                className={index === lastIndex ? "nav-cta" : undefined}
+                onClick={(event) => scrollToSection(event, page)}
+              >
+                {page}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
   );
 }

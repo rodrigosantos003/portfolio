@@ -34,25 +34,37 @@ export function getCurrentCompany() {
   return data.experiences[0].company;
 }
 
-export function groupExperiencesByYear() {
-  const currentYear = Temporal.Now.plainDateISO().year;
-  const grouped = new Map([[currentYear, []]]);
+const MONTHS = [
+  "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+];
 
-  for (const exp of data.experiences) {
-    if (!exp.start) continue;
+function formatDate(value) {
+  const str = String(value);
+  if (/^\d{4}$/.test(str)) return str;
 
-    const year = "end" in exp ? toDate(exp.start).year : currentYear;
+  const date = toDate(str);
+  return `${MONTHS[date.month - 1]} ${date.year}`;
+}
 
-    grouped.getOrInsertComputed(year, () => []).push(exp);
-  }
+function formatPeriod({ start, end }) {
+  const from = formatDate(start);
+  const to = end ? formatDate(end) : "Now";
 
-  return [...grouped]
-    .sort(([a], [b]) => b - a)
-    .map(([year, experiences]) => ({
-      year: String(year),
-      experiences: experiences.toSorted((a, b) =>
-        Temporal.PlainDate.compare(toDate(b.start), toDate(a.start)),
-      ),
+  return from === to ? from : `${from} — ${to}`;
+}
+
+// Experiences newest first, ongoing roles flagged, dates pre-formatted
+export function getExperiences() {
+  return data.experiences
+    .filter((exp) => exp.start)
+    .toSorted((a, b) =>
+      Temporal.PlainDate.compare(toDate(b.start), toDate(a.start)),
+    )
+    .map((exp) => ({
+      ...exp,
+      current: !exp.end,
+      period: formatPeriod(exp),
     }));
 }
 

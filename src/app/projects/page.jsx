@@ -15,7 +15,9 @@ export default async function Projects() {
   if (!res.ok) {
     return (
       <section id="Projects">
-        <h1>Projects</h1>
+        <h2 className="section-title">
+          <span className="section-index">03 /</span>Projects
+        </h2>
         <p>No data available</p>
       </section>
     );
@@ -31,7 +33,9 @@ export default async function Projects() {
 
   return (
     <section id="Projects">
-      <h1>Projects</h1>
+      <h2 className="section-title">
+        <span className="section-index">03 /</span>Projects
+      </h2>
       <ProjectsClient repos={filteredRepos} techStack={techStack} />
     </section>
   );

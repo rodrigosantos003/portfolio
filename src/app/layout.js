@@ -1,17 +1,17 @@
-import { Inter, Fira_Code } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import { ReactLenis } from "lenis/react";
 import AnalyticsGate from "@/components/consent/gate";
 import ConsentBanner from "@/components/consent/index";
 import "./global.css";
 
-const inter = Inter({
+const geist = Geist({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-sans",
   preload: true,
 });
 
-const firaCode = Fira_Code({
+const geistMono = Geist_Mono({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-mono",
@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${firaCode.variable}`}
+      className={`${geist.variable} ${geistMono.variable}`}
       data-scroll-behavior="smooth"
     >
       <head>
@@ -68,7 +68,7 @@ export default function RootLayout({ children }) {
         />
       </head>
 
-      <body className={inter.className}>
+      <body className={geist.className}>
         <ReactLenis root>{children}</ReactLenis>
         <ConsentBanner />
         <AnalyticsGate />
