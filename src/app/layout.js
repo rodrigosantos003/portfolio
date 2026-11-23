@@ -21,7 +21,6 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Rodrigo Santos - Software Engineer",
   description: "Portfolio of Rodrigo Santos, a Software Engineer",
-  manifest: "/manifest.json",
   verification: {
     google: "lpoPbATXK4nd5QA_fNmVcy840M0Lzc14L1k_nBLHn0I",
   },
