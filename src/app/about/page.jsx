@@ -21,12 +21,12 @@ const About = () => {
         <h1 className="hero-title">
           Rodrigo Santos
           <br />
-          <span>Backend, integrations &amp; cloud</span>
+          <span>Fullstack, integrations &amp; cloud</span>
         </h1>
         <p className="hero-lead">
           Software engineer with {experienceYears}+ years of experience building
-          and maintaining REST APIs with Node.js, MongoDB and PostgreSQL,
-          running them on AWS and making them observable.
+          web and mobile apps with React and React Native, backed by REST APIs
+          with Node.js, MongoDB and PostgreSQL running on AWS.
         </p>
         <div className="hero-actions">
           <a className="btn btn-light" href="#Projects">
@@ -64,12 +64,12 @@ const About = () => {
         <div className="tile about-text reveal">
           <p>
             I'm a software engineer with {experienceYears}+ years of experience
-            in software development, specialising in backend development, system
-            integration and cloud.
+            in software development, specialising in fullstack development,
+            system integration and cloud.
           </p>
           <p>
             {highlightTechnologies(
-              "My core skills include building and maintaining REST APIs using Node.js with MongoDB and PostgreSQL databases, AWS infrastructure and observability tools.",
+              "My core skills include building web and mobile apps with React and React Native, and building and maintaining REST APIs using Node.js with MongoDB and PostgreSQL databases, AWS infrastructure and observability tools.",
             )}
           </p>
           <p>
