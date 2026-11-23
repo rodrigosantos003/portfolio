@@ -69,7 +69,7 @@ const About = () => {
           </p>
           <p>
             {highlightTechnologies(
-              "My core skills include building web and mobile apps with React and React Native, and building and maintaining REST APIs using Node.js with MongoDB and PostgreSQL databases, AWS infrastructure and observability tools.",
+              "My core skills include building web and mobile apps with React and React Native, and building and maintaining REST APIs using Node.js with MongoDB and PostgreSQL databases, AWS infrastructure and AI-assisted development.",
             )}
           </p>
           <p>

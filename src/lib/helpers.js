@@ -83,7 +83,7 @@ const TECHNOLOGIES = [
   "MongoDB",
   "PostgreSQL",
   "AWS",
-  "observability",
+  "AI-assisted development",
 ];
 
 const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");

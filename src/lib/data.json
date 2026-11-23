@@ -9,7 +9,8 @@
     "React",
     "React Native",
     "SigNoz",
-    "Vitest"
+    "Vitest",
+    "AI-assisted development"
   ],
   "experiences": [
     {
@@ -24,6 +25,7 @@
         "Development of web and native apps in Mendix",
         "Implementation of unit tests with Vitest",
         "Integration of software observability using SigNoz",
+        "Use of AI-assisted development in the development workflow",
         "Acting as the technical representative in client meetings"
       ]
     },
